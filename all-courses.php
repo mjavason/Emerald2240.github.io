@@ -81,55 +81,53 @@ require_once('functions/functions.php');
                                                 $courseInfo = getCourseInfo($course['course_id']);
                                                 if ($courseInfo) {
                                             ?>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-chec">
-                                                                <!-- <input type="checkbox" class="form-check-input"> -->
-                                                                <label class="form-check-label">#<?= $course['course_id'] ?></label>
-                                                            </div>
-                                                        </td>
-                                                        <td><?= $courseInfo['course_code'] ?></td>
-                                                        <td><?= $courseInfo['course_name'] ?></td>
-                                                        <td><?= $course['course_credits'] ?></td>
-                                                        <td><?= $course['course_level'] ?></td>
-                                                        <td><?= $course['year_taken'] ?></td>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                                    <span class="flaticon-more-button-of-three-dots"></span>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <a class="dropdown-item" href="add-incourse"><i class="fas fa-plus text-primary"></i>Add Incourse Grades</a>
-                                                                    <a class="dropdown-item" href="add-exam"><i class="fas fa-plus text-primary"></i>Add Exam Grades</a>
-                                                                    <a class="dropdown-item" href="edit-course-grades"><i class="fas fa-pen text-dark-pastel-green"></i>Edit</a>
-                                                                    <a class="dropdown-item" href="edit-course-grades"><i class="fas fa-calendar text-dark-pastel-green"></i>View Grades</a>
-                                                                    <?php
-                                                                    if (isset($_SESSION['active_course_id'])) {
+                                                    <?php
+                                                    if (isset($_SESSION['active_course_id'])) {
+                                                        if ($_SESSION['active_course_id'] == $course['course_id']) { ?>
+                                                            <tr class="text-success">
+                                                            <?php } else { ?>
+                                                            <tr>
+                                                            <?php }
+                                                    } else { ?>
+                                                            <tr>
+                                                            <?php } ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                        if ($_SESSION['active_course_id'] == $course['course_id']) { ?>
-                                                                        <?php }else{ ?>
-                                                                            <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>"><i class="fas fa-check text-orange-peel"></i>Activate</a>
-                                                                    <?php }}else{ ?>
-                                                                        <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>"><i class="fas fa-check text-orange-peel"></i>Activate</a>
+                                                            <td>
+                                                                <div class="form-chec">
+                                                                    <!-- <input type="checkbox" class="form-check-input"> -->
+                                                                    <label class="form-check-label">#<?= $course['course_id'] ?></label>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                            <?php } } } ?>
+                                                            </td>
+                                                            <td><?= $courseInfo['course_code'] ?></td>
+                                                            <td><?= $courseInfo['course_name'] ?></td>
+                                                            <td><?= $course['course_credits'] ?></td>
+                                                            <td><?= $course['course_level'] ?></td>
+                                                            <td><?= $course['year_taken'] ?></td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                        <span class="flaticon-more-button-of-three-dots"></span>
+                                                                    </a>
+                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                        <a class="dropdown-item" href="add-incourse"><i class="fas fa-plus text-primary"></i>Add Incourse Grades</a>
+                                                                        <a class="dropdown-item" href="add-exam"><i class="fas fa-plus text-primary"></i>Add Exam Grades</a>
+                                                                        <a class="dropdown-item" href="edit-course-grades"><i class="fas fa-pen text-dark-pastel-green"></i>Edit</a>
+                                                                        <a class="dropdown-item" href="edit-course-grades"><i class="fas fa-calendar text-dark-pastel-green"></i>View Grades</a>
+                                                                        <?php
+                                                                        if (isset($_SESSION['active_course_id'])) {
+                                                                            if ($_SESSION['active_course_id'] == $course['course_id']) { ?>
+                                                                            <?php } else { ?>
+                                                                                <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>"><i class="fas fa-check text-orange-peel"></i>Activate</a>
+                                                                            <?php }
+                                                                        } else { ?>
+                                                                            <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>"><i class="fas fa-check text-orange-peel"></i>Activate</a>
+                                                                        <?php } ?>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            </tr>
+                                                    <?php    }
+                                            } ?>
                                         </tbody>
                                     </table>
                                 </div>
