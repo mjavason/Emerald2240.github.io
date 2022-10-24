@@ -25,16 +25,11 @@
     </div>
     <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
         <ul class="navbar-nav">
-            <li class="navbar-item header-search-bar">
-                <div class="input-group stylish-input-group">
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="flaticon-search" aria-hidden="true"></span>
-                        </button>
-                    </span>
-                    <input type="text" class="form-control" placeholder="Find Something . . .">
-                </div>
-            </li>
+            <div class="item-header">
+                <?php if (isset($_SESSION['active_course_id'])) { ?>
+                    <h5 class="item-title"><?= $_SESSION['active_course_name'] ?> <span>(<?= $_SESSION['active_course_code'] ?>)</span><span><a href="all-courses"><i class="fa fa-edit"></i></a></span></h5>
+                <?php } ?>
+            </div>
         </ul>
         <ul class="navbar-nav">
             <li class="navbar-item dropdown header-admin">

@@ -38,7 +38,6 @@ function gotoPage($location)
   exit();
 }
 
-
 function showSweetAlert($type, $id = null)
 {
   switch ($type) {
@@ -386,17 +385,7 @@ function getResultsPerCourseTaken($coursesTaken, $i, $semester)
   }
 }
 
-function getCourseInfo($id)
-{
-  global $db_handle;
 
-  $result = $db_handle->selectAllWhere('courses', 'id', $id);
-  if (isset($result)) {
-    return $result[0];
-  } else {
-    return false;
-  }
-}
 
 function getPersonalResult($results, $regNo)
 {
@@ -439,3 +428,68 @@ function returnGrade($score)
       break;
   }
 }
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////// LECTURER SECTION ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#region
+
+function getCoursesHandledByLecturer($id)
+{
+  global $db_handle;
+  //$response = [];
+  $result = $db_handle->selectAllWhere('lecturers', 'id', $id);
+
+  if (isset($result)) {
+    $coursesTaken = json_decode($result[0]['course_handling'], true);
+    sort($coursesTaken);
+
+    return $coursesTaken;
+  } else {
+    return false;
+  }
+}
+
+function getCourseInfo($id)
+{
+  global $db_handle;
+
+  $result = $db_handle->selectAllWhere('courses', 'id', $id);
+  if (isset($result)) {
+    return $result[0];
+  } else {
+    return false;
+  }
+}
+
+function getDepartmentInfo($id){
+  global $db_handle;
+
+  $result = $db_handle->selectAllWhere('departments', 'id', $id);
+  if (isset($result)) {
+    return $result[0];
+  } else {
+    return false;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endregion

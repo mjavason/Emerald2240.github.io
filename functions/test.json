@@ -1,0 +1,272 @@
+[
+    {
+        "course_id": 673,
+        "course_credits": 1,
+        "course_level": 3,
+        "year_taken": 2019
+    },
+    {
+        "course_id": 543,
+        "course_credits": 2,
+        "course_level": 1,
+        "year_taken": 2019
+    },
+    {
+        "course_id": 226,
+        "course_credits": 1,
+        "course_level": 5,
+        "year_taken": 2018
+    },
+    {
+        "course_id": 981,
+        "course_credits": 1,
+        "course_level": 3,
+        "year_taken": 2022
+    },
+    {
+        "course_id": 649,
+        "course_credits": 2,
+        "course_level": 1,
+        "year_taken": 2020
+    },
+    {
+        "course_id": 47,
+        "course_credits": 1,
+        "course_level": 2,
+        "year_taken": 2021
+    },
+    {
+        "course_id": 664,
+        "course_credits": 2,
+        "course_level": 2,
+        "year_taken": 2021
+    },
+    {
+        "course_id": 884,
+        "course_credits": 2,
+        "course_level": 3,
+        "year_taken": 2019
+    },
+    {
+        "course_id": 440,
+        "course_credits": 1,
+        "course_level": 4,
+        "year_taken": 2018
+    },
+    {
+        "course_id": 121,
+        "course_credits": 1,
+        "course_level": 2,
+        "year_taken": 2022
+    },
+    {
+        "course_id": 352,
+        "course_credits": 1,
+        "course_level": 1,
+        "year_taken": 2018
+    },
+    {
+        "course_id": 790,
+        "course_credits": 2,
+        "course_level": 4,
+        "year_taken": 2019
+    },
+    {
+        "course_id": 308,
+        "course_credits": 1,
+        "course_level": 3,
+        "year_taken": 2020
+    },
+    {
+        "course_id": 42,
+        "course_credits": 2,
+        "course_level": 1,
+        "year_taken": 2022
+    },
+    {
+        "course_id": 589,
+        "course_credits": 2,
+        "course_level": 3,
+        "year_taken": 2020
+    },
+    {
+        "course_id": 163,
+        "course_credits": 3,
+        "course_level": 4,
+        "year_taken": 2020
+    },
+    {
+        "course_id": 659,
+        "course_credits": 1,
+        "course_level": 4,
+        "year_taken": 2021
+    },
+    {
+        "course_id": 989,
+        "course_credits": 2,
+        "course_level": 4,
+        "year_taken": 2020
+    },
+    {
+        "course_id": 126,
+        "course_credits": 1,
+        "course_level": 2,
+        "year_taken": 2018
+    },
+    {
+        "course_id": 814,
+        "course_credits": 2,
+        "course_level": 2,
+        "year_taken": 2022
+    },
+    {
+        "course_id": 303,
+        "course_credits": 1,
+        "course_level": 2,
+        "year_taken": 2022
+    },
+    {
+        "course_id": 655,
+        "course_credits": 1,
+        "course_level": 4,
+        "year_taken": 2022
+    },
+    {
+        "course_id": 147,
+        "course_credits": 1,
+        "course_level": 3,
+        "year_taken": 2022
+    },
+    {
+        "course_id": 99,
+        "course_credits": 3,
+        "course_level": 4,
+        "year_taken": 2020
+    },
+    {
+        "course_id": 440,
+        "course_credits": 2,
+        "course_level": 3,
+        "year_taken": 2020
+    },
+    {
+        "course_id": 23,
+        "course_credits": 2,
+        "course_level": 2,
+        "year_taken": 2022
+    },
+    {
+        "course_id": 702,
+        "course_credits": 1,
+        "course_level": 1,
+        "year_taken": 2021
+    },
+    {
+        "course_id": 413,
+        "course_credits": 1,
+        "course_level": 5,
+        "year_taken": 2022
+    },
+    {
+        "course_id": 931,
+        "course_credits": 3,
+        "course_level": 5,
+        "year_taken": 2022
+    },
+    {
+        "course_id": 601,
+        "course_credits": 2,
+        "course_level": 4,
+        "year_taken": 2020
+    },
+    {
+        "course_id": 718,
+        "course_credits": 1,
+        "course_level": 3,
+        "year_taken": 2019
+    },
+    {
+        "course_id": 935,
+        "course_credits": 3,
+        "course_level": 5,
+        "year_taken": 2021
+    },
+    {
+        "course_id": 164,
+        "course_credits": 3,
+        "course_level": 3,
+        "year_taken": 2022
+    },
+    {
+        "course_id": 64,
+        "course_credits": 1,
+        "course_level": 2,
+        "year_taken": 2018
+    },
+    {
+        "course_id": 840,
+        "course_credits": 2,
+        "course_level": 3,
+        "year_taken": 2020
+    },
+    {
+        "course_id": 15,
+        "course_credits": 3,
+        "course_level": 3,
+        "year_taken": 2021
+    },
+    {
+        "course_id": 852,
+        "course_credits": 3,
+        "course_level": 1,
+        "year_taken": 2018
+    },
+    {
+        "course_id": 780,
+        "course_credits": 1,
+        "course_level": 2,
+        "year_taken": 2021
+    },
+    {
+        "course_id": 882,
+        "course_credits": 2,
+        "course_level": 5,
+        "year_taken": 2018
+    },
+    {
+        "course_id": 102,
+        "course_credits": 1,
+        "course_level": 4,
+        "year_taken": 2019
+    },
+    {
+        "course_id": 304,
+        "course_credits": 2,
+        "course_level": 4,
+        "year_taken": 2018
+    },
+    {
+        "course_id": 478,
+        "course_credits": 3,
+        "course_level": 4,
+        "year_taken": 2019
+    },
+    {
+        "course_id": 901,
+        "course_credits": 2,
+        "course_level": 4,
+        "year_taken": 2019
+    },
+    {
+        "course_id": 451,
+        "course_credits": 1,
+        "course_level": 4,
+        "year_taken": 2020
+    },
+    {
+        "course_id": 13,
+        "course_credits": 3,
+        "course_level": 3,
+        "year_taken": 2021
+    }
+]

@@ -1,3 +1,7 @@
+<?php
+require_once('config/connect.php');
+require_once('functions/functions.php');
+?>
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -28,7 +32,7 @@
                     <h3>Admin Dashboard</h3>
                     <ul>
                         <li>
-                            <a href="index-2">Home</a>
+                            <a href="index">Home</a>
                         </li>
                         <li>Admin</li>
                     </ul>

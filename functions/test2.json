@@ -1,0 +1,57 @@
+[
+    {
+        "reg_no": "2017030180311",
+        "incourse": 30,
+        "exam": 70
+    },
+    {
+        "reg_no": "2945914387",
+        "incourse": 16,
+        "exam": 56
+    },
+    {
+        "reg_no": "7548849753",
+        "incourse": 8,
+        "exam": 58
+    },
+    {
+        "reg_no": "0694057606",
+        "incourse": 7,
+        "exam": 40
+    },
+    {
+        "reg_no": "3889825109",
+        "incourse": 23,
+        "exam": 9
+    },
+    {
+        "reg_no": "8226473993",
+        "incourse": 5,
+        "exam": 36
+    },
+    {
+        "reg_no": "5256745042",
+        "incourse": 18,
+        "exam": 30
+    },
+    {
+        "reg_no": "5203973229",
+        "incourse": 27,
+        "exam": 31
+    },
+    {
+        "reg_no": "7545162021",
+        "incourse": 4,
+        "exam": 45
+    },
+    {
+        "reg_no": "4164336285",
+        "incourse": 22,
+        "exam": 39
+    },
+    {
+        "reg_no": "2235341934",
+        "incourse": 25,
+        "exam": 20
+    }
+]

@@ -1,8 +1,9 @@
+<?php
+require_once('config/connect.php');
+require_once('functions/functions.php');
+?>
 <!doctype html>
 <html class="no-js" lang="">
-
-
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/teacher-details by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:01 GMT -->
 
 <head>
     <title>AKKHOR | Teacher Details</title>
@@ -29,7 +30,7 @@
                     <h3>Teacher</h3>
                     <ul>
                         <li>
-                            <a href="index-2">Home</a>
+                            <a href="index">Home</a>
                         </li>
                         <li>Teacher Details</li>
                     </ul>

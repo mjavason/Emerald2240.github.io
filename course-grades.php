@@ -1,8 +1,9 @@
+<?php
+require_once('config/connect.php');
+require_once('functions/functions.php');
+?>
 <!doctype html>
 <html class="no-js" lang="">
-
-
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/exam-grade by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:02 GMT -->
 
 <head>
     <title>AKKHOR | Exam Grade</title>
@@ -29,7 +30,7 @@
                     <h3>Examination</h3>
                     <ul>
                         <li>
-                            <a href="index-2">Home</a>
+                            <a href="index">Home</a>
                         </li>
                         <li>Exam Grade</li>
                     </ul>
@@ -564,8 +565,5 @@
     <script src="js/main.js"></script>
 
 </body>
-
-
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/exam-grade by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:02 GMT -->
 
 </html>
