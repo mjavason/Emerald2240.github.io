@@ -1,0 +1,7 @@
+<Ifmodule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php 
+# RewriteRule ^(.*)\.htm$ $1.php [NC]
+RewriteRule ^([^\.]+)$ $con_tent/1.html
+</Ifmodule>

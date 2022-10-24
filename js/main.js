@@ -79,7 +79,7 @@
     if ($.fn.DataTable !== undefined) {
       $('.data-table').DataTable({
         paging: true,
-        searching: false,
+        searching: true,
         info: false,
         lengthChange: false,
         lengthMenu: [20, 50, 75, 100],
