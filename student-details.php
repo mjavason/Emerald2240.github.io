@@ -1,36 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="">
 
-
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/student-promotion.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:56:59 GMT -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>AKKHOR | Students Promotion</title>
+    <title>AKKHOR | Students Details</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/all.min.css">
-    <!-- Flaticon CSS -->
-    <link rel="stylesheet" href="fonts/flaticon.css">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="css/animate.min.css">
-    <!-- Select 2 CSS -->
-    <link rel="stylesheet" href="css/select2.min.css">
-    <!-- Date Picker CSS -->
-    <link rel="stylesheet" href="css/datepicker.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Modernize js -->
-    <script src="js/modernizr-3.6.0.min.js"></script>
+    <?php require_once('inc/head.php'); ?>
 </head>
 
 <body>
@@ -38,7 +12,7 @@
     <div id="preloader"></div>
     <!-- Preloader End Here -->
     <div id="wrapper" class="wrapper bg-ash">
-         <!-- Header Menu Area Start Here -->
+        <!-- Header Menu Area Start Here -->
         <div class="navbar navbar-expand-md header-menu-one bg-light">
             <div class="nav-bar-header-one">
                 <div class="header-logo">
@@ -46,7 +20,7 @@
                         <img src="img/logo.png" alt="logo">
                     </a>
                 </div>
-                  <div class="toggle-button sidebar-toggle">
+                <div class="toggle-button sidebar-toggle">
                     <button type="button" class="item-link">
                         <span class="btn-icon-wrap">
                             <span></span>
@@ -57,7 +31,7 @@
                 </div>
             </div>
             <div class="d-md-none mobile-nav-bar">
-               <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar" aria-expanded="false">
+                <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar" aria-expanded="false">
                     <i class="far fa-arrow-alt-circle-down"></i>
                 </button>
                 <button type="button" class="navbar-toggler sidebar-toggle-mobile">
@@ -79,8 +53,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="navbar-item dropdown header-admin">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                             <div class="admin-title">
                                 <h5 class="item-title">Stevne Zone</h5>
                                 <span>Admin</span>
@@ -105,8 +78,7 @@
                         </div>
                     </li>
                     <li class="navbar-item dropdown header-message">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                             <i class="far fa-envelope"></i>
                             <div class="item-title d-md-none text-16 mg-l-10">Message</div>
                             <span>5</span>
@@ -124,12 +96,12 @@
                                     <div class="media-body space-sm">
                                         <div class="item-title">
                                             <a href="#">
-                                                <span class="item-name">Maria Zaman</span> 
-                                                <span class="item-time">18:30</span> 
-                                            </a>  
+                                                <span class="item-name">Maria Zaman</span>
+                                                <span class="item-time">18:30</span>
+                                            </a>
                                         </div>
-                                        <p>What is the reason of buy this item. 
-                                        Is it usefull for me.....</p>
+                                        <p>What is the reason of buy this item.
+                                            Is it usefull for me.....</p>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -139,12 +111,12 @@
                                     <div class="media-body space-sm">
                                         <div class="item-title">
                                             <a href="#">
-                                                <span class="item-name">Benny Roy</span> 
-                                                <span class="item-time">10:35</span> 
-                                            </a>  
+                                                <span class="item-name">Benny Roy</span>
+                                                <span class="item-time">10:35</span>
+                                            </a>
                                         </div>
-                                        <p>What is the reason of buy this item. 
-                                        Is it usefull for me.....</p>
+                                        <p>What is the reason of buy this item.
+                                            Is it usefull for me.....</p>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -154,12 +126,12 @@
                                     <div class="media-body space-sm">
                                         <div class="item-title">
                                             <a href="#">
-                                                <span class="item-name">Steven</span> 
-                                                <span class="item-time">02:35</span> 
-                                            </a>  
+                                                <span class="item-name">Steven</span>
+                                                <span class="item-time">02:35</span>
+                                            </a>
                                         </div>
-                                        <p>What is the reason of buy this item. 
-                                        Is it usefull for me.....</p>
+                                        <p>What is the reason of buy this item.
+                                            Is it usefull for me.....</p>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -169,20 +141,19 @@
                                     <div class="media-body space-sm">
                                         <div class="item-title">
                                             <a href="#">
-                                                <span class="item-name">Joshep Joe</span> 
-                                                <span class="item-time">12:35</span> 
-                                            </a>  
+                                                <span class="item-name">Joshep Joe</span>
+                                                <span class="item-time">12:35</span>
+                                            </a>
                                         </div>
-                                        <p>What is the reason of buy this item. 
-                                        Is it usefull for me.....</p>
+                                        <p>What is the reason of buy this item.
+                                            Is it usefull for me.....</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li class="navbar-item dropdown header-notification">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                             <i class="far fa-bell"></i>
                             <div class="item-title d-md-none text-16 mg-l-10">Notification</div>
                             <span>8</span>
@@ -223,9 +194,8 @@
                             </div>
                         </div>
                     </li>
-                     <li class="navbar-item dropdown header-language">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" 
-                        data-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe-americas"></i>EN</a>
+                    <li class="navbar-item dropdown header-language">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe-americas"></i>EN</a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="#">English</a>
                             <a class="dropdown-item" href="#">Spanish</a>
@@ -240,12 +210,12 @@
         <!-- Page Area Start Here -->
         <div class="dashboard-page-one">
             <!-- Sidebar Area Start Here -->
-           <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
-               <div class="mobile-sidebar-header d-md-none">
+            <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
+                <div class="mobile-sidebar-header d-md-none">
                     <div class="header-logo">
                         <a href="index-2.html"><img src="img/logo1.png" alt="logo"></a>
                     </div>
-               </div>
+                </div>
                 <div class="sidebar-menu-content">
                     <ul class="nav nav-sidebar-menu sidebar-toggle-view">
                         <li class="nav-item sidebar-nav-item">
@@ -272,13 +242,13 @@
                                     <a href="all-student.html" class="nav-link"><i class="fas fa-angle-right"></i>All Students</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="student-details.html" class="nav-link"><i class="fas fa-angle-right"></i>Student Details</a>
+                                    <a href="student-details.html" class="nav-link menu-active"><i class="fas fa-angle-right"></i>Student Details</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="admit-form.html" class="nav-link"><i class="fas fa-angle-right"></i>Admission Form</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="student-promotion.html" class="nav-link menu-active"><i class="fas fa-angle-right"></i>Student Promotion</a>
+                                    <a href="student-promotion.html" class="nav-link"><i class="fas fa-angle-right"></i>Student Promotion</a>
                                 </li>
                             </ul>
                         </li>
@@ -381,7 +351,7 @@
                         <li class="nav-item">
                             <a href="messaging.html" class="nav-link"><i class="flaticon-chat"></i><span>Messeage</span></a>
                         </li>
-                         <li class="nav-item sidebar-nav-item">
+                        <li class="nav-item sidebar-nav-item">
                             <a href="#" class="nav-link"><i class="flaticon-menu-1"></i><span>UI Elements</span></a>
                             <ul class="nav sub-group-menu">
                                 <li class="nav-item">
@@ -403,8 +373,7 @@
                                     <a href="ui-tab.html" class="nav-link"><i class="fas fa-angle-right"></i>Tab</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="ui-widget.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Widget</a>
+                                    <a href="ui-widget.html" class="nav-link"><i class="fas fa-angle-right"></i>Widget</a>
                                 </li>
                             </ul>
                         </li>
@@ -426,21 +395,20 @@
                         <li>
                             <a href="index-2.html">Home</a>
                         </li>
-                        <li>Student Promotion</li>
+                        <li>Student Details</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
-                <!-- Student Promotion Area Start Here -->
+                <!-- Student Details Area Start Here -->
                 <div class="card height-auto">
                     <div class="card-body">
                         <div class="heading-layout1">
                             <div class="item-title">
-                                <h3>Search Student Promotion</h3>
+                                <h3>About Me</h3>
                             </div>
-                           <div class="dropdown">
-                                <a class="dropdown-toggle" href="#" role="button" 
-                                data-toggle="dropdown" aria-expanded="false">...</a>
-        
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
+
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
                                     <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
@@ -448,61 +416,91 @@
                                 </div>
                             </div>
                         </div>
-                        <form class="new-added-form">
-                            <div class="row">
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Current Session *</label>
-                                    <select class="select2">
-                                        <option value="">2017-2018</option>
-                                        <option value="1">2018-2019</option>
-                                        <option value="2">2015-2016</option>
-                                        <option value="3">2014-2015</option>
-                                    </select>
+                        <div class="single-info-details">
+                            <div class="item-img">
+                                <img src="img/figure/student1.jpg" alt="student">
+                            </div>
+                            <div class="item-content">
+                                <div class="header-inline item-header">
+                                    <h3 class="text-dark-medium font-medium">Jessia Rose</h3>
+                                    <div class="header-elements">
+                                        <ul>
+                                            <li><a href="#"><i class="far fa-edit"></i></a></li>
+                                            <li><a href="#"><i class="fas fa-print"></i></a></li>
+                                            <li><a href="#"><i class="fas fa-download"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Promote Session *</label>
-                                    <select class="select2">
-                                        <option value="">2017-2018</option>
-                                        <option value="1">2018-2019</option>
-                                        <option value="2">2015-2016</option>
-                                        <option value="3">2014-2015</option>
-                                    </select>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Promotion From Class *</label>
-                                    <select class="select2">
-                                        <option value="">Please Select *</option>
-                                        <option value="1">Play</option>
-                                        <option value="2">Nursery</option>
-                                        <option value="3">One</option>
-                                        <option value="3">Two</option>
-                                        <option value="3">Three</option>
-                                        <option value="3">Four</option>
-                                        <option value="3">Five</option>
-                                    </select>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Promotion To Class *</label>
-                                    <select class="select2">
-                                        <option value="">Please Select *</option>
-                                        <option value="1">Play</option>
-                                        <option value="2">Nursery</option>
-                                        <option value="3">One</option>
-                                        <option value="3">Two</option>
-                                        <option value="3">Three</option>
-                                        <option value="3">Four</option>
-                                        <option value="3">Five</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 form-group mg-t-8">
-                                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                                    <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                <p>Aliquam erat volutpat. Curabiene natis massa sedde lacu stiquen sodale
+                                    word moun taiery.Aliquam erat volutpaturabiene natis massa sedde sodale
+                                    word moun taiery.</p>
+                                <div class="info-table table-responsive">
+                                    <table class="table text-nowrap">
+                                        <tbody>
+                                            <tr>
+                                                <td>Name:</td>
+                                                <td class="font-medium text-dark-medium">Jessia Rose</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gender:</td>
+                                                <td class="font-medium text-dark-medium">Female</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Father Name:</td>
+                                                <td class="font-medium text-dark-medium">Steve Jones</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mother Name:</td>
+                                                <td class="font-medium text-dark-medium">Naomi Rose</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date Of Birth:</td>
+                                                <td class="font-medium text-dark-medium">07.08.2016</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Religion:</td>
+                                                <td class="font-medium text-dark-medium">Islam</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Father Occupation:</td>
+                                                <td class="font-medium text-dark-medium">Graphic Designer</td>
+                                            </tr>
+                                            <tr>
+                                                <td>E-mail:</td>
+                                                <td class="font-medium text-dark-medium">jessiarose@gmail.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Admission Date:</td>
+                                                <td class="font-medium text-dark-medium">07.08.2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Class:</td>
+                                                <td class="font-medium text-dark-medium">2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Section:</td>
+                                                <td class="font-medium text-dark-medium">Pink</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Roll:</td>
+                                                <td class="font-medium text-dark-medium">10005</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Address:</td>
+                                                <td class="font-medium text-dark-medium">House #10, Road #6, Australia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phone:</td>
+                                                <td class="font-medium text-dark-medium">+ 88 98568888418</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
-                <!-- Student Promotion Area End Here -->
+                <!-- Student Details Area End Here -->
                 <footer class="footer-wrap-layout1">
                     <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by <a href="#">PsdBosS</a></div>
                 </footer>
@@ -518,12 +516,6 @@
     <script src="js/popper.min.js"></script>
     <!-- Bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- Select 2 Js -->
-    <script src="js/select2.min.js"></script>
-    <!-- Date Picker Js -->
-    <script src="js/datepicker.min.js"></script>
-    <!-- Smoothscroll Js -->
-    <script src="js/jquery.smoothscroll.min.html"></script>
     <!-- Scroll Up Js -->
     <script src="js/jquery.scrollUp.min.js"></script>
     <!-- Custom Js -->
@@ -532,5 +524,6 @@
 </body>
 
 
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/student-promotion.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:01 GMT -->
+<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/student-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:56:56 GMT -->
+
 </html>

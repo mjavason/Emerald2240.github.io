@@ -2,33 +2,13 @@
 <html class="no-js" lang="">
 
 
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/messaging.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:02 GMT -->
+<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/account-settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:03 GMT -->
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>AKKHOR | Messaging</title>
+    <title>AKKHOR | Account Setting</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/all.min.css">
-    <!-- Flaticon CSS -->
-    <link rel="stylesheet" href="fonts/flaticon.css">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="css/animate.min.css">
-    <!-- Select 2 CSS -->
-    <link rel="stylesheet" href="css/select2.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Modernize js -->
-    <script src="js/modernizr-3.6.0.min.js"></script>
+    <?php require_once('inc/head.php'); ?>
+
 </head>
 
 <body>
@@ -36,7 +16,7 @@
     <div id="preloader"></div>
     <!-- Preloader End Here -->
     <div id="wrapper" class="wrapper bg-ash">
-       <!-- Header Menu Area Start Here -->
+        <!-- Header Menu Area Start Here -->
         <div class="navbar navbar-expand-md header-menu-one bg-light">
             <div class="nav-bar-header-one">
                 <div class="header-logo">
@@ -44,7 +24,7 @@
                         <img src="img/logo.png" alt="logo">
                     </a>
                 </div>
-                  <div class="toggle-button sidebar-toggle">
+                <div class="toggle-button sidebar-toggle">
                     <button type="button" class="item-link">
                         <span class="btn-icon-wrap">
                             <span></span>
@@ -55,7 +35,7 @@
                 </div>
             </div>
             <div class="d-md-none mobile-nav-bar">
-               <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar" aria-expanded="false">
+                <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar" aria-expanded="false">
                     <i class="far fa-arrow-alt-circle-down"></i>
                 </button>
                 <button type="button" class="navbar-toggler sidebar-toggle-mobile">
@@ -77,8 +57,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="navbar-item dropdown header-admin">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                             <div class="admin-title">
                                 <h5 class="item-title">Stevne Zone</h5>
                                 <span>Admin</span>
@@ -103,8 +82,7 @@
                         </div>
                     </li>
                     <li class="navbar-item dropdown header-message">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                             <i class="far fa-envelope"></i>
                             <div class="item-title d-md-none text-16 mg-l-10">Message</div>
                             <span>5</span>
@@ -122,12 +100,12 @@
                                     <div class="media-body space-sm">
                                         <div class="item-title">
                                             <a href="#">
-                                                <span class="item-name">Maria Zaman</span> 
-                                                <span class="item-time">18:30</span> 
-                                            </a>  
+                                                <span class="item-name">Maria Zaman</span>
+                                                <span class="item-time">18:30</span>
+                                            </a>
                                         </div>
-                                        <p>What is the reason of buy this item. 
-                                        Is it usefull for me.....</p>
+                                        <p>What is the reason of buy this item.
+                                            Is it usefull for me.....</p>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -137,12 +115,12 @@
                                     <div class="media-body space-sm">
                                         <div class="item-title">
                                             <a href="#">
-                                                <span class="item-name">Benny Roy</span> 
-                                                <span class="item-time">10:35</span> 
-                                            </a>  
+                                                <span class="item-name">Benny Roy</span>
+                                                <span class="item-time">10:35</span>
+                                            </a>
                                         </div>
-                                        <p>What is the reason of buy this item. 
-                                        Is it usefull for me.....</p>
+                                        <p>What is the reason of buy this item.
+                                            Is it usefull for me.....</p>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -152,12 +130,12 @@
                                     <div class="media-body space-sm">
                                         <div class="item-title">
                                             <a href="#">
-                                                <span class="item-name">Steven</span> 
-                                                <span class="item-time">02:35</span> 
-                                            </a>  
+                                                <span class="item-name">Steven</span>
+                                                <span class="item-time">02:35</span>
+                                            </a>
                                         </div>
-                                        <p>What is the reason of buy this item. 
-                                        Is it usefull for me.....</p>
+                                        <p>What is the reason of buy this item.
+                                            Is it usefull for me.....</p>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -167,20 +145,19 @@
                                     <div class="media-body space-sm">
                                         <div class="item-title">
                                             <a href="#">
-                                                <span class="item-name">Joshep Joe</span> 
-                                                <span class="item-time">12:35</span> 
-                                            </a>  
+                                                <span class="item-name">Joshep Joe</span>
+                                                <span class="item-time">12:35</span>
+                                            </a>
                                         </div>
-                                        <p>What is the reason of buy this item. 
-                                        Is it usefull for me.....</p>
+                                        <p>What is the reason of buy this item.
+                                            Is it usefull for me.....</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li class="navbar-item dropdown header-notification">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                             <i class="far fa-bell"></i>
                             <div class="item-title d-md-none text-16 mg-l-10">Notification</div>
                             <span>8</span>
@@ -221,9 +198,8 @@
                             </div>
                         </div>
                     </li>
-                     <li class="navbar-item dropdown header-language">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" 
-                        data-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe-americas"></i>EN</a>
+                    <li class="navbar-item dropdown header-language">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe-americas"></i>EN</a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="#">English</a>
                             <a class="dropdown-item" href="#">Spanish</a>
@@ -238,12 +214,12 @@
         <!-- Page Area Start Here -->
         <div class="dashboard-page-one">
             <!-- Sidebar Area Start Here -->
-           <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
-               <div class="mobile-sidebar-header d-md-none">
+            <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
+                <div class="mobile-sidebar-header d-md-none">
                     <div class="header-logo">
                         <a href="index-2.html"><img src="img/logo1.png" alt="logo"></a>
                     </div>
-               </div>
+                </div>
                 <div class="sidebar-menu-content">
                     <ul class="nav nav-sidebar-menu sidebar-toggle-view">
                         <li class="nav-item sidebar-nav-item">
@@ -377,9 +353,9 @@
                             <a href="notice-board.html" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="messaging.html" class="nav-link menu-active"><i class="flaticon-chat"></i><span>Messeage</span></a>
+                            <a href="messaging.html" class="nav-link"><i class="flaticon-chat"></i><span>Messeage</span></a>
                         </li>
-                         <li class="nav-item sidebar-nav-item">
+                        <li class="nav-item sidebar-nav-item">
                             <a href="#" class="nav-link"><i class="flaticon-menu-1"></i><span>UI Elements</span></a>
                             <ul class="nav sub-group-menu">
                                 <li class="nav-item">
@@ -401,8 +377,7 @@
                                     <a href="ui-tab.html" class="nav-link"><i class="fas fa-angle-right"></i>Tab</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="ui-widget.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Widget</a>
+                                    <a href="ui-widget.html" class="nav-link"><i class="fas fa-angle-right"></i>Widget</a>
                                 </li>
                             </ul>
                         </li>
@@ -410,7 +385,7 @@
                             <a href="map.html" class="nav-link"><i class="flaticon-planet-earth"></i><span>Map</span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="account-settings.html" class="nav-link"><i class="flaticon-settings"></i><span>Account</span></a>
+                            <a href="account-settings.html" class="nav-link menu-active"><i class="flaticon-settings"></i><span>Account</span></a>
                         </li>
                     </ul>
                 </div>
@@ -419,28 +394,27 @@
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area">
-                    <h3>Messaging</h3>
+                    <h3>Account Setting</h3>
                     <ul>
                         <li>
                             <a href="index-2.html">Home</a>
                         </li>
-                        <li>Compose Message</li>
+                        <li>Setting</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
+                <!-- Account Settings Area Start Here -->
                 <div class="row">
-                    <!-- Add Notice Area Start Here -->
-                    <div class="col-xl-8">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="heading-layout1">
                                     <div class="item-title">
-                                        <h3>Write New Message</h3>
+                                        <h3>Add New User</h3>
                                     </div>
-                                   <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" 
-                                        data-toggle="dropdown" aria-expanded="false">...</a>
-                
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
+
                                         <div class="dropdown-menu dropdown-menu-right">
                                             <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
                                             <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
@@ -450,18 +424,111 @@
                                 </div>
                                 <form class="new-added-form">
                                     <div class="row">
-                                        <div class="col-12 form-group">
-                                            <label>Title</label>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>First Name *</label>
                                             <input type="text" placeholder="" class="form-control">
                                         </div>
-                                        <div class="col-12 form-group">
-                                            <label>Recipient</label>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>Last Name *</label>
                                             <input type="text" placeholder="" class="form-control">
                                         </div>
-                                        <div class="col-12 form-group">
-                                            <label>Message</label>
-                                            <textarea class="textarea form-control" name="message" id="form-message" cols="10"
-                                            rows="9"></textarea>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>User Type *</label>
+                                            <select class="select2">
+                                                <option value="">Please Select*</option>
+                                                <option value="1">Super Admin</option>
+                                                <option value="2">Admin</option>
+                                                <option value="3">User</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>Gender *</label>
+                                            <select class="select2">
+                                                <option value="">Please Select Gender *</option>
+                                                <option value="1">Male</option>
+                                                <option value="2">Female</option>
+                                                <option value="3">Others</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>Father's Name</label>
+                                            <input type="text" placeholder="" class="form-control">
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>Mother's Name</label>
+                                            <input type="text" placeholder="" class="form-control">
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>Date Of Birth *</label>
+                                            <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker" data-position='bottom right'>
+                                            <i class="far fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>Religion *</label>
+                                            <select class="select2">
+                                                <option value="">Please Select *</option>
+                                                <option value="1">Islam</option>
+                                                <option value="2">Christian</option>
+                                                <option value="3">Hindu</option>
+                                                <option value="4">Buddhish</option>
+                                                <option value="5">Others</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>Joining Data *</label>
+                                            <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker" data-position='bottom right'>
+                                            <i class="far fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>E-Mail</label>
+                                            <input type="email" placeholder="" class="form-control">
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>Subject *</label>
+                                            <select class="select2">
+                                                <option value="">Please Select*</option>
+                                                <option value="1">Mathmetics</option>
+                                                <option value="2">English</option>
+                                                <option value="3">Chemistry</option>
+                                                <option value="3">Biology</option>
+                                                <option value="3">Others</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>Class *</label>
+                                            <select class="select2">
+                                                <option value="">Please Select Class *</option>
+                                                <option value="1">Play</option>
+                                                <option value="2">Nursery</option>
+                                                <option value="3">One</option>
+                                                <option value="3">Two</option>
+                                                <option value="3">Three</option>
+                                                <option value="3">Four</option>
+                                                <option value="3">Five</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>Section *</label>
+                                            <select class="select2">
+                                                <option value="">Please Select Section *</option>
+                                                <option value="1">Pink</option>
+                                                <option value="2">Blue</option>
+                                                <option value="3">Bird</option>
+                                                <option value="3">Rose</option>
+                                                <option value="3">Red</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>ID No *</label>
+                                            <input type="text" placeholder="" class="form-control">
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>Phone</label>
+                                            <input type="text" placeholder="" class="form-control">
+                                        </div>
+                                        <div class="col-lg-6 col-12 form-group">
+                                            <label>Adress *</label>
+                                            <textarea class="textarea form-control" name="message" id="form-message" cols="10" rows="4"></textarea>
                                         </div>
                                         <div class="col-12 form-group mg-t-8">
                                             <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
@@ -472,19 +539,16 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Add Notice Area End Here -->
-                    <!-- All Notice Area Start Here -->
-                    <div class="col-xl-4">
-                        <div class="card message-box-wrap height-auto">
+                    <div class="col-4-xxxl col-xl-5">
+                        <div class="card account-settings-box height-auto">
                             <div class="card-body">
-                                <div class="heading-layout1">
+                                <div class="heading-layout1 mg-b-20">
                                     <div class="item-title">
-                                        <h3>Successful Message</h3>
+                                        <h3>All User</h3>
                                     </div>
-                                     <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" 
-                                        data-toggle="dropdown" aria-expanded="false">...</a>
-                
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
+
                                         <div class="dropdown-menu dropdown-menu-right">
                                             <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
                                             <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
@@ -492,49 +556,153 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="message-success-box">
-                                    <div class="item-content">
-                                        <div class="item-icon">
-                                            <i class="fas fa-check"></i>
+                                <div class="all-user-box">
+                                    <div class="media media-none--xs active">
+                                        <div class="item-img">
+                                            <img src="img/figure/user1.jpg" class="media-img-auto" alt="user">
                                         </div>
-                                        <h3 class="item-title">Successfully Message Sent</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card message-box-wrap height-auto">
-                            <div class="card-body">
-                                <div class="heading-layout1">
-                                    <div class="item-title">
-                                        <h3>Error Message</h3>
-                                    </div>
-                                     <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" 
-                                        data-toggle="dropdown" aria-expanded="false">...</a>
-                
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
-                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                        <div class="media-body space-md">
+                                            <h5 class="item-title">Steven Johnson</h5>
+                                            <div class="item-subtitle">Super Admin</div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="message-error-box">
-                                    <div class="item-content">
-                                        <div class="item-icon">
-                                            <i class="fas fa-exclamation-circle"></i>
+                                    <div class="media media-none--xs">
+                                        <div class="item-img">
+                                            <img src="img/figure/user2.jpg" class="media-img-auto" alt="user">
                                         </div>
-                                        <h3 class="item-title">Some Field Requierd Here</h3>
+                                        <div class="media-body space-md">
+                                            <h5 class="item-title">Maria Jane</h5>
+                                            <div class="item-subtitle">Super Admin</div>
+                                        </div>
+                                    </div>
+                                    <div class="media media-none--xs">
+                                        <div class="item-img">
+                                            <img src="img/figure/user3.jpg" class="media-img-auto" alt="user">
+                                        </div>
+                                        <div class="media-body space-md">
+                                            <h5 class="item-title">Andrew Walles</h5>
+                                            <div class="item-subtitle">Super Admin</div>
+                                        </div>
+                                    </div>
+                                    <div class="media media-none--xs">
+                                        <div class="item-img">
+                                            <img src="img/figure/user4.jpg" class="media-img-auto" alt="user">
+                                        </div>
+                                        <div class="media-body space-md">
+                                            <h5 class="item-title">Walter Emma</h5>
+                                            <div class="item-subtitle">Super Admin</div>
+                                        </div>
+                                    </div>
+                                    <div class="media media-none--xs">
+                                        <div class="item-img">
+                                            <img src="img/figure/user5.jpg" class="media-img-auto" alt="user">
+                                        </div>
+                                        <div class="media-body space-md">
+                                            <h5 class="item-title">Stuart Johnson</h5>
+                                            <div class="item-subtitle">Super Admin</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- All Notice Area End Here -->
+                    <div class="col-8-xxxl col-xl-7">
+                        <div class="card account-settings-box">
+                            <div class="card-body">
+                                <div class="heading-layout1 mg-b-20">
+                                    <div class="item-title">
+                                        <h3>User Details</h3>
+                                    </div>
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
+
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-details-box">
+                                    <div class="item-img">
+                                        <img src="img/figure/user.jpg" alt="user">
+                                    </div>
+                                    <div class="item-content">
+                                        <div class="info-table table-responsive">
+                                            <table class="table text-nowrap">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Name:</td>
+                                                        <td class="font-medium text-dark-medium">Steven Johnson</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>User Type:</td>
+                                                        <td class="font-medium text-dark-medium">Super Admin</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Gender:</td>
+                                                        <td class="font-medium text-dark-medium">Male</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Father Name:</td>
+                                                        <td class="font-medium text-dark-medium">Steve Jones</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mother Name:</td>
+                                                        <td class="font-medium text-dark-medium">Naomi Rose</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Date Of Birth:</td>
+                                                        <td class="font-medium text-dark-medium">07.08.2016</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Religion:</td>
+                                                        <td class="font-medium text-dark-medium">Islam</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Joining Date:</td>
+                                                        <td class="font-medium text-dark-medium">07.08.2016</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>E-mail:</td>
+                                                        <td class="font-medium text-dark-medium">stevenjohnson@gmail.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Subject:</td>
+                                                        <td class="font-medium text-dark-medium">English</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Class:</td>
+                                                        <td class="font-medium text-dark-medium">2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Section:</td>
+                                                        <td class="font-medium text-dark-medium">Pink</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ID No:</td>
+                                                        <td class="font-medium text-dark-medium">10005</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Address:</td>
+                                                        <td class="font-medium text-dark-medium">House #10, Road #6, Australia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Phone:</td>
+                                                        <td class="font-medium text-dark-medium">+ 88 98568888418</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- Account Settings Area End Here -->
                 <footer class="footer-wrap-layout1">
-                    <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by
-                        <a href="#">PsdBosS</a></div>
+                    <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by <a href="#">PsdBosS</a></div>
                 </footer>
             </div>
         </div>
@@ -548,15 +716,18 @@
     <script src="js/popper.min.js"></script>
     <!-- Bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- Select 2 Js -->
-    <script src="js/select2.min.js"></script>
     <!-- Scroll Up Js -->
     <script src="js/jquery.scrollUp.min.js"></script>
+    <!-- Select 2 Js -->
+    <script src="js/select2.min.js"></script>
+    <!-- Date Picker Js -->
+    <script src="js/datepicker.min.js"></script>
     <!-- Custom Js -->
     <script src="js/main.js"></script>
 
 </body>
 
 
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/messaging.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:02 GMT -->
+<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/account-settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:08 GMT -->
+
 </html>

@@ -2,37 +2,12 @@
 <html class="no-js" lang="">
 
 
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/transport.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:02 GMT -->
+<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/exam-grade.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:02 GMT -->
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>AKKHOR | Transport</title>
+    <title>AKKHOR | Exam Grade</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/all.min.css">
-    <!-- Flaticon CSS -->
-    <link rel="stylesheet" href="fonts/flaticon.css">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="css/animate.min.css">
-    <!-- Date Picker CSS -->
-    <link rel="stylesheet" href="css/datepicker.min.css">
-    <!-- Select 2 CSS -->
-    <link rel="stylesheet" href="css/select2.min.css">
-    <!-- Data Table CSS -->
-    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Modernize js -->
-    <script src="js/modernizr-3.6.0.min.js"></script>
+    <?php require_once('inc/head.php'); ?>
 </head>
 
 <body>
@@ -48,7 +23,7 @@
                         <img src="img/logo.png" alt="logo">
                     </a>
                 </div>
-                  <div class="toggle-button sidebar-toggle">
+                <div class="toggle-button sidebar-toggle">
                     <button type="button" class="item-link">
                         <span class="btn-icon-wrap">
                             <span></span>
@@ -59,7 +34,7 @@
                 </div>
             </div>
             <div class="d-md-none mobile-nav-bar">
-               <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar" aria-expanded="false">
+                <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar" aria-expanded="false">
                     <i class="far fa-arrow-alt-circle-down"></i>
                 </button>
                 <button type="button" class="navbar-toggler sidebar-toggle-mobile">
@@ -81,8 +56,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="navbar-item dropdown header-admin">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                             <div class="admin-title">
                                 <h5 class="item-title">Stevne Zone</h5>
                                 <span>Admin</span>
@@ -107,8 +81,7 @@
                         </div>
                     </li>
                     <li class="navbar-item dropdown header-message">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                             <i class="far fa-envelope"></i>
                             <div class="item-title d-md-none text-16 mg-l-10">Message</div>
                             <span>5</span>
@@ -126,12 +99,12 @@
                                     <div class="media-body space-sm">
                                         <div class="item-title">
                                             <a href="#">
-                                                <span class="item-name">Maria Zaman</span> 
-                                                <span class="item-time">18:30</span> 
-                                            </a>  
+                                                <span class="item-name">Maria Zaman</span>
+                                                <span class="item-time">18:30</span>
+                                            </a>
                                         </div>
-                                        <p>What is the reason of buy this item. 
-                                        Is it usefull for me.....</p>
+                                        <p>What is the reason of buy this item.
+                                            Is it usefull for me.....</p>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -141,12 +114,12 @@
                                     <div class="media-body space-sm">
                                         <div class="item-title">
                                             <a href="#">
-                                                <span class="item-name">Benny Roy</span> 
-                                                <span class="item-time">10:35</span> 
-                                            </a>  
+                                                <span class="item-name">Benny Roy</span>
+                                                <span class="item-time">10:35</span>
+                                            </a>
                                         </div>
-                                        <p>What is the reason of buy this item. 
-                                        Is it usefull for me.....</p>
+                                        <p>What is the reason of buy this item.
+                                            Is it usefull for me.....</p>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -156,12 +129,12 @@
                                     <div class="media-body space-sm">
                                         <div class="item-title">
                                             <a href="#">
-                                                <span class="item-name">Steven</span> 
-                                                <span class="item-time">02:35</span> 
-                                            </a>  
+                                                <span class="item-name">Steven</span>
+                                                <span class="item-time">02:35</span>
+                                            </a>
                                         </div>
-                                        <p>What is the reason of buy this item. 
-                                        Is it usefull for me.....</p>
+                                        <p>What is the reason of buy this item.
+                                            Is it usefull for me.....</p>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -171,20 +144,19 @@
                                     <div class="media-body space-sm">
                                         <div class="item-title">
                                             <a href="#">
-                                                <span class="item-name">Joshep Joe</span> 
-                                                <span class="item-time">12:35</span> 
-                                            </a>  
+                                                <span class="item-name">Joshep Joe</span>
+                                                <span class="item-time">12:35</span>
+                                            </a>
                                         </div>
-                                        <p>What is the reason of buy this item. 
-                                        Is it usefull for me.....</p>
+                                        <p>What is the reason of buy this item.
+                                            Is it usefull for me.....</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li class="navbar-item dropdown header-notification">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                             <i class="far fa-bell"></i>
                             <div class="item-title d-md-none text-16 mg-l-10">Notification</div>
                             <span>8</span>
@@ -225,9 +197,8 @@
                             </div>
                         </div>
                     </li>
-                     <li class="navbar-item dropdown header-language">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" 
-                        data-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe-americas"></i>EN</a>
+                    <li class="navbar-item dropdown header-language">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe-americas"></i>EN</a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="#">English</a>
                             <a class="dropdown-item" href="#">Spanish</a>
@@ -243,11 +214,11 @@
         <div class="dashboard-page-one">
             <!-- Sidebar Area Start Here -->
             <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
-               <div class="mobile-sidebar-header d-md-none">
+                <div class="mobile-sidebar-header d-md-none">
                     <div class="header-logo">
                         <a href="index-2.html"><img src="img/logo1.png" alt="logo"></a>
                     </div>
-               </div>
+                </div>
                 <div class="sidebar-menu-content">
                     <ul class="nav nav-sidebar-menu sidebar-toggle-view">
                         <li class="nav-item sidebar-nav-item">
@@ -257,15 +228,13 @@
                                     <a href="index-2.html" class="nav-link"><i class="fas fa-angle-right"></i>Admin</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="index3.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Students</a>
+                                    <a href="index3.html" class="nav-link"><i class="fas fa-angle-right"></i>Students</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="index4.html" class="nav-link"><i class="fas fa-angle-right"></i>Parents</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="index5.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Teachers</a>
+                                    <a href="index5.html" class="nav-link"><i class="fas fa-angle-right"></i>Teachers</a>
                                 </li>
                             </ul>
                         </li>
@@ -277,38 +246,32 @@
                                         Students</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="student-details.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Student Details</a>
+                                    <a href="student-details.html" class="nav-link"><i class="fas fa-angle-right"></i>Student Details</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="admit-form.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Admission Form</a>
+                                    <a href="admit-form.html" class="nav-link"><i class="fas fa-angle-right"></i>Admission Form</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="student-promotion.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Student Promotion</a>
+                                    <a href="student-promotion.html" class="nav-link"><i class="fas fa-angle-right"></i>Student Promotion</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i
-                                    class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
+                            <a href="#" class="nav-link"><i class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
                             <ul class="nav sub-group-menu">
                                 <li class="nav-item">
                                     <a href="all-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>All
                                         Teachers</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="teacher-details.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Teacher Details</a>
+                                    <a href="teacher-details.html" class="nav-link"><i class="fas fa-angle-right"></i>Teacher Details</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="add-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
                                         Teacher</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="teacher-payment.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Payment</a>
+                                    <a href="teacher-payment.html" class="nav-link"><i class="fas fa-angle-right"></i>Payment</a>
                                 </li>
                             </ul>
                         </li>
@@ -320,8 +283,7 @@
                                         Parents</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="parents-details.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Parents Details</a>
+                                    <a href="parents-details.html" class="nav-link"><i class="fas fa-angle-right"></i>Parents Details</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="add-parents.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
@@ -350,8 +312,7 @@
                                         Collection</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="all-expense.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Expenses</a>
+                                    <a href="all-expense.html" class="nav-link"><i class="fas fa-angle-right"></i>Expenses</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="add-expense.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
@@ -360,8 +321,7 @@
                             </ul>
                         </li>
                         <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i
-                                    class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
+                            <a href="#" class="nav-link"><i class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
                             <ul class="nav sub-group-menu">
                                 <li class="nav-item">
                                     <a href="all-class.html" class="nav-link"><i class="fas fa-angle-right"></i>All
@@ -374,44 +334,39 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="all-subject.html" class="nav-link"><i
-                                    class="flaticon-open-book"></i><span>Subject</span></a>
+                            <a href="all-subject.html" class="nav-link"><i class="flaticon-open-book"></i><span>Subject</span></a>
                         </li>
                         <li class="nav-item">
                             <a href="class-routine.html" class="nav-link"><i class="flaticon-calendar"></i><span>Class
                                     Routine</span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="student-attendence.html" class="nav-link"><i
-                                    class="flaticon-checklist"></i><span>Attendence</span></a>
+                            <a href="student-attendence.html" class="nav-link"><i class="flaticon-checklist"></i><span>Attendence</span></a>
                         </li>
                         <li class="nav-item sidebar-nav-item">
                             <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Exam</span></a>
-                            <ul class="nav sub-group-menu">
+                            <ul class="nav sub-group-menu sub-group-active">
                                 <li class="nav-item">
                                     <a href="exam-schedule.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
                                         Schedule</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="exam-grade.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                                    <a href="exam-grade.html" class="nav-link menu-active"><i class="fas fa-angle-right"></i>Exam
                                         Grades</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="transport.html" class="nav-link menu-active"><i
-                                    class="flaticon-bus-side-view"></i><span>Transport</span></a>
+                            <a href="transport.html" class="nav-link"><i class="flaticon-bus-side-view"></i><span>Transport</span></a>
                         </li>
                         <li class="nav-item">
                             <a href="hostel.html" class="nav-link"><i class="flaticon-bed"></i><span>Hostel</span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="notice-board.html" class="nav-link"><i
-                                    class="flaticon-script"></i><span>Notice</span></a>
+                            <a href="notice-board.html" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="messaging.html" class="nav-link"><i
-                                    class="flaticon-chat"></i><span>Messeage</span></a>
+                            <a href="messaging.html" class="nav-link"><i class="flaticon-chat"></i><span>Messeage</span></a>
                         </li>
                         <li class="nav-item sidebar-nav-item">
                             <a href="#" class="nav-link"><i class="flaticon-menu-1"></i><span>UI Elements</span></a>
@@ -435,18 +390,15 @@
                                     <a href="ui-tab.html" class="nav-link"><i class="fas fa-angle-right"></i>Tab</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="ui-widget.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Widget</a>
+                                    <a href="ui-widget.html" class="nav-link"><i class="fas fa-angle-right"></i>Widget</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="map.html" class="nav-link"><i
-                                    class="flaticon-planet-earth"></i><span>Map</span></a>
+                            <a href="map.html" class="nav-link"><i class="flaticon-planet-earth"></i><span>Map</span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="account-settings.html" class="nav-link"><i
-                                    class="flaticon-settings"></i><span>Account</span></a>
+                            <a href="account-settings.html" class="nav-link"><i class="flaticon-settings"></i><span>Account</span></a>
                         </li>
                     </ul>
                 </div>
@@ -455,59 +407,62 @@
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area">
-                    <h3>Transport</h3>
+                    <h3>Examination</h3>
                     <ul>
                         <li>
                             <a href="index-2.html">Home</a>
                         </li>
-                        <li>Transport</li>
+                        <li>Exam Grade</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
                 <div class="row">
-                    <!-- Add Transport Area Start Here -->
+                    <!-- Exam Grade Add Area Start Here -->
                     <div class="col-4-xxxl col-12">
                         <div class="card height-auto">
                             <div class="card-body">
                                 <div class="heading-layout1">
                                     <div class="item-title">
-                                        <h3>Add New Transport</h3>
+                                        <h3>Add New Grade</h3>
                                     </div>
                                     <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                            aria-expanded="false">...</a>
+                                        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
 
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                         </div>
                                     </div>
                                 </div>
                                 <form class="new-added-form">
                                     <div class="row">
-                                        <div class="col-12-xxxl col-xl-4 col-sm-6 col-12 form-group">
-                                            <label>Route Name</label>
+                                        <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                            <label>Grade Name</label>
                                             <input type="text" placeholder="" class="form-control">
                                         </div>
-                                        <div class="col-12-xxxl col-xl-4 col-sm-6 col-12 form-group">
-                                            <label>Vehicle Number</label>
+                                        <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                            <label>Grade Point</label>
+                                            <select class="select2">
+                                                <option value="">Please Select</option>
+                                                <option value="1">4.00</option>
+                                                <option value="2">3.65</option>
+                                                <option value="3">3.50</option>
+                                                <option value="3">3.00</option>
+                                                <option value="3">2.50</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                            <label>Percentage From</label>
                                             <input type="text" placeholder="" class="form-control">
                                         </div>
-                                        <div class="col-12-xxxl col-xl-4 col-sm-6 col-12 form-group">
-                                            <label>Driver Name</label>
+                                        <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                            <label>Percentage Upto</label>
                                             <input type="text" placeholder="" class="form-control">
                                         </div>
-                                        <div class="col-12-xxxl col-xl-4 col-sm-6 col-12 form-group">
-                                            <label>License Number</label>
-                                            <input type="text" placeholder="" class="form-control">
-                                        </div>
-                                        <div class="col-12-xxxl col-xl-4 col-sm-6 col-12 form-group">
-                                            <label>Phone Number</label>
-                                            <input type="text" placeholder="" class="form-control">
+                                        <div class="col-12 form-group">
+                                            <label>Comments</label>
+                                            <textarea class="textarea form-control" name="message" id="form-message" cols="10" rows="4"></textarea>
                                         </div>
                                         <div class="col-12 form-group mg-t-8">
                                             <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
@@ -518,44 +473,35 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Add Transport Area End Here -->
-                    <!-- All Transport List Area Start Here -->
+                    <!-- Exam Grade Add Area End Here -->
+                    <!-- Exam Grade List Area Start Here -->
                     <div class="col-8-xxxl col-12">
                         <div class="card height-auto">
                             <div class="card-body">
                                 <div class="heading-layout1">
                                     <div class="item-title">
-                                        <h3>All Transport Lists</h3>
+                                        <h3>Exam Grade Lists</h3>
                                     </div>
                                     <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                            aria-expanded="false">...</a>
+                                        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
 
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                         </div>
                                     </div>
                                 </div>
                                 <form class="mg-b-20">
                                     <div class="row gutters-8">
-                                        <div class="col-lg-4 col-12 form-group">
-                                            <input type="text" placeholder="Search by Route ..." class="form-control">
+                                        <div class="col-lg-5 col-sm-4 col-12 form-group">
+                                            <input type="text" placeholder="Search by Grade ..." class="form-control">
                                         </div>
-                                        <div class="col-lg-3 col-12 form-group">
-                                            <input type="text" placeholder="Search by Car Number ..."
-                                                class="form-control">
+                                        <div class="col-lg-5 col-sm-5 col-12 form-group">
+                                            <input type="text" placeholder="Search by Point ..." class="form-control">
                                         </div>
-                                        <div class="col-lg-3 col-12 form-group">
-                                            <input type="text" placeholder="Search by Phone ..." class="form-control">
-                                        </div>
-                                        <div class="col-lg-2 col-12 form-group">
-                                            <button type="submit"
-                                                class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
+                                        <div class="col-lg-2 col-sm-3 col-12 form-group">
+                                            <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
                                         </div>
                                     </div>
                                 </form>
@@ -566,13 +512,13 @@
                                                 <th>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input checkAll">
-                                                        <label class="form-check-label">Route Name</label>
+                                                        <label class="form-check-label">Grade Name</label>
                                                     </div>
                                                 </th>
-                                                <th>Vehicle No</th>
-                                                <th>Driver Name</th>
-                                                <th>Driver License</th>
-                                                <th>Contact Number</th>
+                                                <th>Grade Point</th>
+                                                <th>Percent From</th>
+                                                <th>Percent Upto</th>
+                                                <th>Comment</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -581,26 +527,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">A+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>3.50</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -609,26 +551,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">B+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>4.00</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -637,26 +575,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">C+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>3.50</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -665,26 +599,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">D+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>3.50</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -693,26 +623,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">A+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>3.50</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -721,26 +647,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">B+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>4.00</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -749,26 +671,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">C+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>3.50</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -777,26 +695,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">D+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>3.50</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -805,26 +719,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">A+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>3.50</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -833,26 +743,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">B+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>4.00</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -861,26 +767,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">C+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>3.50</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -889,26 +791,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">D+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>3.50</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -917,26 +815,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">A+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>3.50</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -945,26 +839,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">B+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>4.00</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -973,26 +863,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">C+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>3.50</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -1001,26 +887,22 @@
                                                 <td>
                                                     <div class="form-check">
                                                         <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label">Wales Road </label>
+                                                        <label class="form-check-label">D+</label>
                                                     </div>
                                                 </td>
-                                                <td>MT988800</td>
-                                                <td>Johnathan John</td>
-                                                <td>DLNC025936</td>
-                                                <td>+889562365846</td>
+                                                <td>3.50</td>
+                                                <td>95.00</td>
+                                                <td>100.00</td>
+                                                <td>Good Result</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                            <a class="dropdown-item" href="#"><i
-                                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -1031,12 +913,13 @@
                             </div>
                         </div>
                     </div>
-                    <!-- All Transport List Area End Here -->
+                    <!-- Exam Grade List Area End Here -->
                 </div>
                 <!-- All Subjects Area End Here -->
                 <footer class="footer-wrap-layout1">
                     <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by
-                        <a href="#">PsdBosS</a></div>
+                        <a href="#">PsdBosS</a>
+                    </div>
                 </footer>
             </div>
         </div>
@@ -1064,5 +947,6 @@
 </body>
 
 
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/transport.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:02 GMT -->
+<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/exam-grade.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:02 GMT -->
+
 </html>
