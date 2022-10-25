@@ -2,6 +2,23 @@
 session_start();
 $db_handle = new DBController();
 
+$first_name = 'Tester';
+$last_name = 'Zero';
+$id = 1;
+$postemail = 'testerzero@mail.com';
+$phone = '08148863871';
+
+
+$_SESSION['user_name'] = ucwords(strtolower($first_name)) . " " . ucwords(strtolower($last_name));
+$_SESSION['first_name'] = $first_name;
+$_SESSION['last_name'] = $last_name;
+$_SESSION['full_name'] = $first_name . ' ' . $last_name;
+$_SESSION['lecturer_id'] = $id;
+$_SESSION['lecturer_email'] = $postemail;
+$_SESSION['phone'] = $phone;
+
+$_SESSION['log'] = true;
+
 
 /**
  * Removes unwanted and harmful characters
@@ -464,12 +481,26 @@ function getCourseInfo($id)
   }
 }
 
-function getDepartmentInfo($id){
+function getDepartmentInfo($id)
+{
   global $db_handle;
 
   $result = $db_handle->selectAllWhere('departments', 'id', $id);
   if (isset($result)) {
     return $result[0];
+  } else {
+    return false;
+  }
+}
+
+function getActiveCoursesPerLecturer($id)
+{
+  global $db_handle;
+  //$response = [];
+  $result = $db_handle->selectAllWhere('results', 'lecturer_id', $id);
+
+  if (isset($result)) {
+    return $result;
   } else {
     return false;
   }

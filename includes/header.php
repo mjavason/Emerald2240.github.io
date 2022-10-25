@@ -24,19 +24,23 @@
         </button>
     </div>
     <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
+
         <ul class="navbar-nav">
-            <div class="item-header">
-                <?php if (isset($_SESSION['active_course_id'])) { ?>
-                    <h5 class="item-title"><?= $_SESSION['active_course_name'] ?> <span>(<?= $_SESSION['active_course_code'] ?>)</span><span><a href="all-courses"><i class="fa fa-edit"></i></a></span></h5>
-                <?php } ?>
-            </div>
+            <li class="navbar-item">
+                <div class="item-title"><b>
+                    <?php if (isset($_SESSION['active_course_id'])) { ?>
+                       Active Course: <?= $_SESSION['active_course_name'] ?> <span>(<?= $_SESSION['active_course_code'] ?>) </span><span><a href="all-courses"><i class="fa fa-edit"></i></a></span>
+                    <?php } ?>
+                    </b>
+                </div>
+            </li>
         </ul>
         <ul class="navbar-nav">
             <li class="navbar-item dropdown header-admin">
                 <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                     <div class="admin-title">
-                        <h5 class="item-title">Stevne Zone</h5>
-                        <span>Admin</span>
+                        <h5 class="item-title"><?= $_SESSION['user_name'] ?></h5>
+                        <span>Lecturer</span>
                     </div>
                     <div class="admin-img">
                         <img src="img/figure/admin.jpg" alt="Admin">
@@ -44,7 +48,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="item-header">
-                        <h6 class="item-title">Steven Zone</h6>
+                        <h6 class="item-title"><?= $_SESSION['user_name'] ?></h6>
                     </div>
                     <div class="item-content">
                         <ul class="settings-list">
@@ -184,6 +188,7 @@
                     <a class="dropdown-item" href="#">Chiness</a>
                 </div>
             </li>
+
         </ul>
     </div>
 </div>

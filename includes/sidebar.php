@@ -37,9 +37,22 @@
             </li>
 
 
-            <li class="nav-item">
+            <li class="nav-item sidebar-nav-item">
                 <a href="all-courses" class="nav-link"><i class="flaticon-open-book"></i><span>My Courses</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="all-courses" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="active-courses" class="nav-link"><i class="fas fa-angle-right"></i>Active Courses</a>
+                    </li>
+                </ul>
             </li>
+
+
+
+
 
             <li class="nav-item sidebar-nav-item">
                 <a href="#" class="nav-link"><i class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
@@ -91,7 +104,7 @@
 
             <li class="nav-item">
                 <?php if (isset($_SESSION['active_course_id'])) { ?>
-                    <a href="account-settings" class="nav-link"><i class="flaticon-settings"></i><span><?= $_SESSION['active_course_name'] ?> <span>(<?= $_SESSION['active_course_code'] ?>)</span></span></a>
+                    <a href="active-courses" class="nav-link"><i class="flaticon-bulb"></i><span><?= $_SESSION['active_course_name'] ?> <span>(<?= $_SESSION['active_course_code'] ?>)</span></span></a>
                 <?php } ?>
 
             </li>

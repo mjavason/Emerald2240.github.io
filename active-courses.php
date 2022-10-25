@@ -7,7 +7,7 @@ require_once('functions/functions.php');
 
 
 <head>
-    <title>AKKHOR | My Courses</title>
+    <title>AKKHOR | My Active Courses</title>
     <meta name="description" content="">
     <?php require_once('includes/head.php'); ?>
 </head>
@@ -28,12 +28,12 @@ require_once('functions/functions.php');
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area">
-                    <h3>My Courses</h3>
+                    <h3>My Active Courses</h3>
                     <ul>
                         <li>
                             <a href="index">Home</a>
                         </li>
-                        <li>All Courses</li>
+                        <li>Active Courses</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
@@ -44,7 +44,7 @@ require_once('functions/functions.php');
                             <div class="card-body">
                                 <div class="heading-layout1">
                                     <div class="item-title">
-                                        <h3>All Courses</h3>
+                                        <h3>Active Courses and Sessions</h3>
                                     </div>
                                     <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
@@ -69,21 +69,21 @@ require_once('functions/functions.php');
                                                 </th>
                                                 <th>Code</th>
                                                 <th>Name</th>
-                                                <!-- <th>Credits</th> -->
-                                                <!-- <th>Level</th> -->
-                                                <!-- <th>Date</th> -->
+                                                <th>Credits</th>
+                                                <th>Level</th>
+                                                <th>Class Set</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php $coursesHandling = getCoursesHandledByLecturer($_SESSION['lecturer_id']);
-                                            foreach ($coursesHandling as $course) {
+                                            <?php $activeCourses = getActiveCoursesPerLecturer($_SESSION['lecturer_id']);
+                                            foreach ($activeCourses as $course) {
                                                 $courseInfo = getCourseInfo($course['course_id']);
                                                 if ($courseInfo) {
                                             ?>
                                                     <?php
                                                     if (isset($_SESSION['active_course_id'])) {
-                                                        if ($_SESSION['active_course_id'] == $course['course_id']) { ?>
+                                                        if ($_SESSION['active_course_id'] == $course['course_id'] && $_SESSION['active_course_table_id'] == $course['id']) { ?>
                                                             <tr class="text-success">
                                                             <?php } else { ?>
                                                             <tr>
@@ -95,30 +95,32 @@ require_once('functions/functions.php');
                                                             <td>
                                                                 <div class="form-chec">
                                                                     <!-- <input type="checkbox" class="form-check-input"> -->
-                                                                    <label class="form-check-label">#<?= $course['course_id'] ?></label>
+                                                                    <label class="form-check-label">#<?= $course['id'] ?></label>
                                                                 </div>
                                                             </td>
                                                             <td><?= $courseInfo['course_code'] ?></td>
                                                             <td><?= $courseInfo['course_name'] ?></td>
-                                                            <!-- <td><?= $course['course_credits'] ?></td>
-                                                            <td><?= $course['course_level'] ?></td>
-                                                            <td><?= $course['year_taken'] ?></td> -->
+                                                            <td><?= $course['course_credits'] ?></td>
+                                                            <td><?= $course['set_level'] ?></td>
+                                                            <td><?= $course['set_year'] ?></td>
                                                             <td>
                                                                 <div class="dropdown">
                                                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                                         <span class="flaticon-more-button-of-three-dots"></span>
                                                                     </a>
                                                                     <div class="dropdown-menu dropdown-menu-right">
-                                                                        <a class="dropdown-item" href="add-incourse"><i class="fas fa-plus text-primary"></i>New Session</a>
-                                                                      
+                                                                        <a class="dropdown-item" href="add-incourse"><i class="fas fa-plus text-primary"></i>Add Incourse Grades</a>
+                                                                        <a class="dropdown-item" href="add-exam"><i class="fas fa-plus text-primary"></i>Add Exam Grades</a>
+                                                                        <a class="dropdown-item" href="edit-course-grades"><i class="fas fa-pen text-dark-pastel-green"></i>Edit</a>
+                                                                        <a class="dropdown-item" href="course-grades"><i class="fas fa-calendar text-dark-pastel-green"></i>View Grades</a>
                                                                         <?php
                                                                         if (isset($_SESSION['active_course_id'])) {
-                                                                            if ($_SESSION['active_course_id'] == $course['course_id']) { ?>
+                                                                            if ($_SESSION['active_course_id'] == $course['course_id'] && $_SESSION['active_course_table_id'] == $course['id']) { ?>
                                                                             <?php } else { ?>
-                                                                                <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>"><i class="fas fa-check text-orange-peel"></i>Activate</a>
+                                                                                <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>&table_id=<?= $course['id'] ?>&level=<?= $course['set_level'] ?>&set_year=<?= $course['set_year'] ?>"><i class="fas fa-check text-orange-peel"></i>Work On</a>
                                                                             <?php }
                                                                         } else { ?>
-                                                                            <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>"><i class="fas fa-check text-orange-peel"></i>Activate</a>
+                                                                            <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>&table_id=<?= $course['id'] ?>&level=<?= $course['set_level'] ?>&set_year=<?= $course['set_year'] ?>"><i class="fas fa-check text-orange-peel"></i>Work On</a>
                                                                         <?php } ?>
                                                                     </div>
                                                                 </div>
