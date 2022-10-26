@@ -110,7 +110,7 @@ require_once('functions/functions.php');
                                                                     </a>
                                                                     <div class="dropdown-menu dropdown-menu-right">
                                                                         <a class="dropdown-item" href="add-incourse"><i class="fas fa-plus text-primary"></i>New Session</a>
-                                                                      
+
                                                                         <?php
                                                                         if (isset($_SESSION['active_course_id'])) {
                                                                             if ($_SESSION['active_course_id'] == $course['course_id']) { ?>

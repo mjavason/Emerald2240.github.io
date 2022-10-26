@@ -77,7 +77,6 @@ class DBController
 		} else {
 			die(mysqli_error($this->conn)); //something a user can understand
 			return false;
-			
 		}
 	}
 

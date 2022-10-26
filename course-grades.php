@@ -37,7 +37,7 @@ require_once('functions/functions.php');
                 </div>
                 <!-- Breadcubs Area End Here -->
                 <div class="row">
-                   
+
                     <!-- Exam Grade Add Area End Here -->
                     <!-- Exam Grade List Area Start Here -->
                     <div class="col-8-xxxl col-12">

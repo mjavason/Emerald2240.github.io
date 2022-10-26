@@ -94,7 +94,7 @@ require_once('functions/functions.php');
                         </div>
                     </div>
                     <!-- Exam Grade Add Area End Here -->
-                    
+
                 </div>
                 <!-- All Subjects Area End Here -->
                 <footer class="footer-wrap-layout1">

@@ -28,9 +28,9 @@
         <ul class="navbar-nav">
             <li class="navbar-item">
                 <div class="item-title"><b>
-                    <?php if (isset($_SESSION['active_course_id'])) { ?>
-                       Active Course: <?= $_SESSION['active_course_name'] ?> <span>(<?= $_SESSION['active_course_code'] ?>) </span><span><a href="all-courses"><i class="fa fa-edit"></i></a></span>
-                    <?php } ?>
+                        <?php if (isset($_SESSION['active_course_id'])) { ?>
+                            Active Course: <?= $_SESSION['active_course_name'] ?> <span>(<?= $_SESSION['active_course_code'] ?>) </span><span><a href="all-courses"><i class="fa fa-edit"></i></a></span>
+                        <?php } ?>
                     </b>
                 </div>
             </li>
