@@ -49,11 +49,11 @@ require_once('functions/functions.php');
                                     <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
 
-                                        <div class="dropdown-menu dropdown-menu-right">
+                                        <!-- <div class="dropdown-menu dropdown-menu-right">
                                             <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
                                             <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
                                             <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 
@@ -77,6 +77,7 @@ require_once('functions/functions.php');
                                         </thead>
                                         <tbody>
                                             <?php $coursesHandling = getCoursesHandledByLecturer($_SESSION['lecturer_id']);
+                                            if($coursesHandling){
                                             foreach ($coursesHandling as $course) {
                                                 $courseInfo = getCourseInfo($course['course_id']);
                                                 if ($courseInfo) {
@@ -109,23 +110,15 @@ require_once('functions/functions.php');
                                                                         <span class="flaticon-more-button-of-three-dots"></span>
                                                                     </a>
                                                                     <div class="dropdown-menu dropdown-menu-right">
-                                                                        <a class="dropdown-item" href="add-incourse"><i class="fas fa-plus text-primary"></i>New Session</a>
+                                                                        <a class="dropdown-item" href="new-session?course_id=<?= $course['course_id'] ?>"><i class="fas fa-plus text-primary"></i>New Session</a>
 
-                                                                        <?php
-                                                                        if (isset($_SESSION['active_course_id'])) {
-                                                                            if ($_SESSION['active_course_id'] == $course['course_id']) { ?>
-                                                                            <?php } else { ?>
-                                                                                <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>"><i class="fas fa-check text-orange-peel"></i>Activate</a>
-                                                                            <?php }
-                                                                        } else { ?>
-                                                                            <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>"><i class="fas fa-check text-orange-peel"></i>Activate</a>
-                                                                        <?php } ?>
+                                                                      
                                                                     </div>
                                                                 </div>
                                                             </td>
                                                             </tr>
                                                     <?php    }
-                                            } ?>
+                                            } }?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -135,7 +128,7 @@ require_once('functions/functions.php');
                 </div>
                 <!-- All Subjects Area End Here -->
                 <footer class="footer-wrap-layout1">
-                    <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by <a href="#">PsdBosS</a></div>
+                    <?php require_once('includes/footer.php') ?>
                 </footer>
             </div>
         </div>
@@ -157,6 +150,7 @@ require_once('functions/functions.php');
     <script src="js/jquery.dataTables.min.js"></script>
     <!-- Custom Js -->
     <script src="js/main.js"></script>
+    <?php require_once('includes/js_imports.php') ?>
 
 </body>
 

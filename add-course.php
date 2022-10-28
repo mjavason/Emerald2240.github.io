@@ -123,6 +123,7 @@ require_once('functions/functions.php');
     <script src="js/jquery.dataTables.min.js"></script>
     <!-- Custom Js -->
     <script src="js/main.js"></script>
+    <?php require_once('includes/js_imports.php') ?>
 
 </body>
 

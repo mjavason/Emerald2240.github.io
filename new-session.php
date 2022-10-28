@@ -1,6 +1,12 @@
 <?php
 require_once('config/connect.php');
 require_once('functions/functions.php');
+
+if (isset($_GET['course_id'])) {
+    $_SESSION['course_id'] = $_GET['course_id'];
+} else {
+    gotoPage('all-courses');
+}
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -27,12 +33,12 @@ require_once('functions/functions.php');
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area">
-                    <h3>Examination</h3>
+                    <h3>Course Sessions</h3>
                     <ul>
                         <li>
                             <a href="index">Home</a>
                         </li>
-                        <li>Exam Grade</li>
+                        <li>Add Course Session</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
@@ -43,7 +49,7 @@ require_once('functions/functions.php');
                             <div class="card-body">
                                 <div class="heading-layout1">
                                     <div class="item-title">
-                                        <h3>Add New Grade</h3>
+                                        <h3>Add New Course Session</h3>
                                     </div>
                                     <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
@@ -55,45 +61,66 @@ require_once('functions/functions.php');
                                         </div>
                                     </div>
                                 </div>
-                                <form class="new-added-form">
+                                <form class="new-added-form" method="POST" action="test">
                                     <div class="row">
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                                            <label>Grade Name</label>
-                                            <input type="text" placeholder="" class="form-control">
-                                        </div>
-                                        <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                                            <label>Grade Point</label>
-                                            <select class="select2">
+                                            <label>Class/Set</label>
+                                            <select id="session_select" name="session" class="select2">
                                                 <option value="">Please Select</option>
-                                                <option value="1">4.00</option>
-                                                <option value="2">3.65</option>
-                                                <option value="3">3.50</option>
-                                                <option value="3">3.00</option>
-                                                <option value="3">2.50</option>
+                                                <option value="2016/2017">2016/2017</option>
+                                                <option value="2017/2018">2017/2018</option>
+                                                <option value="2018/2019">2018/2019</option>
+                                                <option value="2019/2020">2019/2020</option>
+                                                <option value="2020/2021">2020/2021</option>
+                                                <option value="2021/2022">2021/2022</option>
+                                                <option value="2022/2023">2021/2022</option>
                                             </select>
                                         </div>
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                                            <label>Percentage From</label>
-                                            <input type="text" placeholder="" class="form-control">
+                                            <label>Credits</label>
+                                            <input class="form-control" type="number" name="course_credits" id="course_credits">
                                         </div>
+
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                                            <label>Percentage Upto</label>
-                                            <input type="text" placeholder="" class="form-control">
+                                            <label>Semester</label>
+                                            <select name="semester" id="semester_select" class="select2">
+                                                <option value="">Please Select</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
                                         </div>
-                                        <div class="col-12 form-group">
-                                            <label>Comments</label>
-                                            <textarea class="textarea form-control" name="message" id="form-message" cols="10" rows="4"></textarea>
+                                        <!-- <div class="m-4 col-12-xxxl col-lg-6 col-12 form-group">
+
+                                        </div> -->
+
+                                        <!-- <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                            <label>Practicals Included</label>
+                                            <input type="checkbox" class="form-control" name="has_practicals" id="has_practicals">
+                                        </div> -->
+                                        <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                            <label>Practical Lecturer (Leave blank if no practicals exist or Add Personal name if you handle it yourself)</label>
+                                            <input onkeyup='simpleAsyncSearch("functions/ajax.php", "lecturer_search_input")' id="lecturer_search_input" name="practical_lecturer_name" type="text" placeholder="" class="form-control">
+                                            <div class="" id="line"></div>
+                                            <!-- line loader end-->
+                                            <ul id="lecturer_list">
+                                                <!-- <li data-dialog="somedialog" class="trigger" class="trigger lecturer_item"> <a href="#">Item1</a> </li>
+                                                <li class="lecturer_item"><a href="#">Item1</a></li>
+                                                <li class="lecturer_item"><a href="#">Item1</a></li>
+                                                </li> -->
+
+                                            </ul>
                                         </div>
-                                        <div class="col-12 form-group mg-t-8">
-                                            <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                                            <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
-                                        </div>
+
+
+                                    </div>
+                                    <div class="mt-3">
+                                        <button type="button" onclick="createNewCourseSession('functions/createNewCourseSession', getInputValuesAndReturnTheirContentAsJson(['session_select', 'course_credits', 'semester_select', 'lecturer_search_input']))" id="new_session_button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                                        <!-- <button type="reset" onclick="reset()" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button> -->
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <!-- Exam Grade Add Area End Here -->
 
                 </div>
                 <!-- All Subjects Area End Here -->
@@ -118,8 +145,6 @@ require_once('functions/functions.php');
     <script src="js/jquery.scrollUp.min.js"></script>
     <!-- Date Picker Js -->
     <script src="js/datepicker.min.js"></script>
-    <!-- Data Table Js -->
-    <script src="js/jquery.dataTables.min.js"></script>
     <!-- Custom Js -->
     <script src="js/main.js"></script>
     <?php require_once('includes/js_imports.php') ?>

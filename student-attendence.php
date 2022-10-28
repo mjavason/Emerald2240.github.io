@@ -792,9 +792,9 @@ require_once('functions/functions.php');
                         </div>
                     </div>
                 </div>
-                <!-- Student Attendence Area End Here -->
-                <footer class="footer-wrap-layout1">
-                    <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by <a href="#">PsdBosS</a></div>
+               <!-- All Subjects Area End Here -->
+               <footer class="footer-wrap-layout1">
+                    <?php require_once('includes/footer.php') ?>
                 </footer>
             </div>
         </div>
@@ -814,10 +814,8 @@ require_once('functions/functions.php');
     <script src="js/jquery.scrollUp.min.js"></script>
     <!-- Custom Js -->
     <script src="js/main.js"></script>
+    <?php require_once('includes/js_imports.php') ?>
 
 </body>
-
-
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/student-attendence by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Oct 2022 18:57:02 GMT -->
 
 </html>

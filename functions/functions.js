@@ -17,6 +17,25 @@ function htmlEntities(str) {
         .replace(/\n/g, "<br>").replace(/\r/g, "\\\\r").replace(/\t/g, "\\\\t");
 }
 
+$("#search-box").keyup(function () {
+    $("#addUseCountryButton").prop({
+        disabled: true
+    })
+    $.ajax({
+        type: "POST",
+        url: "readCountry.php",
+        data: 'keyword=' + $(this).val(),
+        beforeSend: function () {
+            $("#search-box").css("background", "#FFF url(LoaderIcon.gif) no-repeat 165px");
+        },
+        success: function (data) {
+            $("#suggesstion-box").show();
+            $("#suggesstion-box").html(data);
+            $("#search-box").css("background", "#FFF");
+        }
+    });
+});
+
 function simpleAjaxRequest(url, dataRequest, type) {
     $.ajax(url, {
         type: type,
@@ -86,6 +105,7 @@ function simpleAjaxPostRequest(url, dataRequest) {
         })
 }
 
+//########################################################################################################
 function processLoginAjaxPostRequest(url, dataRequest) {
     console.log(dataRequest);
     setLoader();
@@ -119,6 +139,49 @@ function processLoginAjaxPostRequest(url, dataRequest) {
                     title: "Error",
                     icon: "error",
                     text: "Error: " + dataParsed[0].error
+                    //button: "Got It!",
+                });
+
+            }
+
+        })
+}
+//#########################################################################################################
+
+function createNewCourseSession(url, dataRequest) {
+    console.log(dataRequest);
+    setLoader();
+    $.post(url,   // url
+        dataRequest,//{ myData: 'This is my data.' }, // data to be submit
+        function (data, status, jqXHR) {// success callback
+            //$('#ajax_result').value = ('status: ' + status + ', data: ' + data + '<br>');
+            var dataParsed = JSON.parse(data);
+            console.log(dataParsed);
+            //removeLoader();
+
+            if (dataParsed[0].error == null) {
+                swal(dataParsed[0].success, {
+                    title: "Success",
+                    icon: "success"
+                })
+
+                    .then((value) => {
+                        if (value) {
+                            //swal(`The returned value is: ${value}`);
+                            window.location = 'active-courses';
+                        } else {
+                            //swal(`The returned value is: ${value}`);
+                            window.location = 'all-courses';
+                        }
+                    });
+
+            } else {
+                swal({
+                    //title: "New Course",
+                    title: "Error",
+                    icon: "error",
+                    //text: "Error: " + dataParsed[0].error
+                    text: dataParsed[0].error
                     //button: "Got It!",
                 });
 
@@ -247,7 +310,7 @@ function logout() {
         });
 }
 
-function createNewStudent(url, dataRequest) {
+function createNewlecturer(url, dataRequest) {
     console.log(dataRequest);
     setLoader();
     $.post(url,   // url
@@ -902,6 +965,43 @@ function onFilterBoxReady() {
     this.fixTableColumns(this.getTarget());
     // this.filter('bra');
     this.focus(true);
+}
+
+function simpleAsyncSearch(url, inputId) {
+    inputId = document.getElementById(inputId);
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: 'keyword=' + $(inputId).val(),
+        beforeSend: function () {
+            setSearchBarLoader('line');
+        },
+        success: function (data) {
+            console.log(data);
+            $("#lecturer_list").show();
+            $("#lecturer_list").html(data);
+            removeSearchBarLoader('line');
+        }
+    });
+}
+
+function setSearchBarLoader(elementId) {
+    elementId = document.getElementById(elementId);
+    $(elementId).addClass('line');
+    //$(className).removeClass('line')
+}
+
+function removeSearchBarLoader(elementId) {
+    elementId = document.getElementById(elementId);
+    $(elementId).removeClass('line');
+}
+
+function selectLecturer(val) {
+    $("#lecturer_search_input").val(val);
+    $("#lecturer_list").hide();
+    $("#new_session_button").prop({
+        disabled: false
+    })
 }
 
 // function dollarFormat(number) {

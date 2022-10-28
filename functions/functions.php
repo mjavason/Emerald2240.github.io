@@ -30,7 +30,7 @@ $_SESSION['log'] = true;
  * @param string $case
  * [optional]
  * 
- * If set to 'lower' it automatically formats the results to lowercase, if set to 'none' it is left as it is.
+ * If set to 'lower' it automatically formats the results to lowercase, if set to 'none' it is left as it is, if set to 'clean' it formats the results to uppercase.
  * @return string
  * Returns cleansed string.
  */
@@ -469,6 +469,7 @@ function getCoursesHandledByLecturer($id)
   }
 }
 
+
 function getCourseInfo($id)
 {
   global $db_handle;
@@ -506,9 +507,121 @@ function getActiveCoursesPerLecturer($id)
   }
 }
 
+function getActivePracticalCoursesPerLecturer($id)
+{
+  global $db_handle;
+  //$response = [];
+  $result = $db_handle->selectAllWhereWith2Conditions('results', 'practical_lecturer_id', $id, 'has_practical', 1);
 
+  if (isset($result)) {
+    return $result;
+  } else {
+    return false;
+  }
+}
 
+function createNewCourseSession($lecturerId, $courseId, $courseCredits, $studentSet, $semester, $hasPractical, $practicalLecturerId)
+{
+  global $db_handle;
 
+  $courseCredits = sanitize($courseCredits, 'clean');
+  if ($practicalLecturerId = 'null') {
+    $practicalLecturerId = $lecturerId;
+  }
+
+  $query = "INSERT INTO `results` (
+  `lecturer_id`,
+  `course_id`,	
+  `course_credits`,
+  `set_year`,
+  `semester`,	
+  `has_practical`,
+  `practical_lecturer_id`
+  ) VALUES (
+    '$lecturerId',
+    '$courseId',
+    '$courseCredits',
+    '$studentSet',
+    '$semester',
+    '$hasPractical',
+    '$practicalLecturerId');";
+  return $db_handle->runQueryWithoutResponse($query);
+}
+
+function getLecturerId($lecturerName)
+{
+  $lecturerName = sanitize($lecturerName, 'clean');
+  //echo ($lecturerName);
+  global $db_handle;
+  $fullName = explode(' ', $lecturerName);
+  //print_r($fullName);
+  foreach ($fullName as $name) {
+    $result = $db_handle->selectAllWhere('lecturers', 'first_name', $name);
+    if (isset($result)) {
+      return $result[0]['id'];
+    } else {
+      $result2 = $db_handle->selectAllWhere('lecturers', 'last_name', $name);
+      if (isset($result2)) {
+        return $result2[0]['id'];
+      }
+    }
+  }
+  return false;
+}
+
+function checkForDuplicateWithTwoColumns($tableName, $col1, $val1, $col2, $val2)
+{
+  global $db_handle;
+  //$response = [];
+  $result = $db_handle->selectAllWhereWith2Conditions($tableName, $col1, $val1, $col2, $val2);
+
+  return isset($result) && count($result) > 0;
+}
+
+function checkForDuplicate($tableName, $col1, $val1)
+{
+  global $db_handle;
+  //$response = [];
+  $result = $db_handle->selectAllWhere($tableName, $col1, $val1);
+
+  return isset($result) && count($result) > 0;
+}
+
+function getLecturerName($id)
+{
+
+  global $db_handle;
+
+  $result = $db_handle->selectAllWhere('lecturers', 'id', $id);
+  if (isset($result)) {
+    return $result[0]['first_name'] . ' ' . $result[0]['last_name'];
+  } else {
+    return false;
+  }
+}
+
+function updateCourseSession($resultId, $lecturerId, $courseId, $courseCredits, $studentSet, $semester, $hasPractical, $practicalLecturerId)
+{
+  global $db_handle;
+
+  $courseCredits = sanitize($courseCredits, 'clean');
+  if ($practicalLecturerId = 'null') {
+    $practicalLecturerId = $lecturerId;
+  }
+
+  $query = "UPDATE `results` SET 
+  `set_level` = '3',
+  `lecturer_id`= $lecturerId,
+  `course_id`= $courseId,
+  `course_credits` = $courseCredits,
+  `set_year` = '$studentSet',
+  `semester` = $semester,	
+  `has_practical` = $hasPractical,
+  `practical_lecturer_id` = $practicalLecturerId
+   WHERE `results`.`id` = $resultId";
+
+  return $db_handle->runQueryWithoutResponse($query);
+}
 
 
 

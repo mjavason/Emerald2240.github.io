@@ -7,7 +7,7 @@ require_once('functions/functions.php');
 
 
 <head>
-    <title>AKKHOR | My Active Courses</title>
+    <title>AKKHOR | My Active Practical Courses</title>
     <meta name="description" content="">
     <?php require_once('includes/head.php'); ?>
 </head>
@@ -28,12 +28,12 @@ require_once('functions/functions.php');
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area">
-                    <h3>My Active Courses</h3>
+                    <h3>My Active Practical Courses</h3>
                     <ul>
                         <li>
                             <a href="index">Home</a>
                         </li>
-                        <li>Active Courses</li>
+                        <li>Active Practical Courses</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
@@ -44,12 +44,12 @@ require_once('functions/functions.php');
                             <div class="card-body">
                                 <div class="heading-layout1">
                                     <div class="item-title">
-                                        <h3>Active Courses and Sessions</h3>
+                                        <h3>Active Practical Courses and Sessions</h3>
                                     </div>
                                     <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
-                                        <!-- 
-                                        <div class="dropdown-menu dropdown-menu-right">
+
+                                        <!-- <div class="dropdown-menu dropdown-menu-right">
                                             <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
                                             <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
                                             <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
@@ -76,7 +76,7 @@ require_once('functions/functions.php');
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php $activeCourses = getActiveCoursesPerLecturer($_SESSION['lecturer_id']);
+                                            <?php $activeCourses = getActivePracticalCoursesPerLecturer($_SESSION['lecturer_id']);
                                             if ($activeCourses) {
                                                 foreach ($activeCourses as $course) {
                                                     $courseInfo = getCourseInfo($course['course_id']);
@@ -111,8 +111,7 @@ require_once('functions/functions.php');
                                                                         </a>
                                                                         <div class="dropdown-menu dropdown-menu-right">
                                                                             <a class="dropdown-item" href="add-incourse"><i class="fas fa-plus text-primary"></i>Add Incourse Grades</a>
-                                                                            <a class="dropdown-item" href="add-exam"><i class="fas fa-plus text-primary"></i>Add Exam Grades</a>
-                                                                            <a class="dropdown-item" href="edit-session?result_id=<?= $course['id'] ?>&course_id=<?= $course['course_id'] ?>&semester=<?= $course['semester'] ?>&course_credits=<?= $course['course_credits'] ?>&set=<?= $course['set_year'] ?>&practical_lecturer_name=<?= getLecturerName($course['practical_lecturer_id']) ?>&edit=1"><i class="fas fa-pen text-dark-pastel-green"></i>Edit</a>
+                                                                            <!-- <a class="dropdown-item" href="edit-session?result_id=<?= $course['id'] ?>&course_id=<?= $course['course_id'] ?>&semester=<?= $course['semester'] ?> &course_credits=<?= $course['course_credits'] ?>&set=<?= $course['set_year'] ?>&practical_lecturer_name=<?= getLecturerName($course['practical_lecturer_id']) ?>&edit=1"><i class="fas fa-pen text-dark-pastel-green"></i>Edit</a> -->
                                                                             <a class="dropdown-item" href="course-grades"><i class="fas fa-calendar text-dark-pastel-green"></i>View Grades</a>
                                                                             <?php
                                                                             if (isset($_SESSION['active_course_id'])) {

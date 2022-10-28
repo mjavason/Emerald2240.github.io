@@ -46,3 +46,6 @@
 
 <!-- Date Picker CSS -->
 <link rel="stylesheet" href="css/datepicker.min.css?v=<?php echo time(); ?>">
+
+<!-- Custom css file(Contains searchbar loader) -->
+<link rel="stylesheet" href="css/customStyle.css?v=<?php echo time(); ?>">

@@ -998,9 +998,9 @@ require_once('functions/functions.php');
                         </div>
                     </div>
                 </div>
-                <!-- Student Table Area End Here -->
+                <!-- All Subjects Area End Here -->
                 <footer class="footer-wrap-layout1">
-                    <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by <a href="#">PsdBosS</a></div>
+                    <?php require_once('includes/footer.php') ?>
                 </footer>
             </div>
         </div>
@@ -1020,6 +1020,7 @@ require_once('functions/functions.php');
     <script src="js/jquery.dataTables.min.js"></script>
     <!-- Custom Js -->
     <script src="js/main.js"></script>
+    <?php require_once('includes/js_imports.php') ?>
 
 </body>
 

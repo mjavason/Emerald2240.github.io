@@ -6,36 +6,31 @@
     </div>
     <div class="sidebar-menu-content">
         <ul class="nav nav-sidebar-menu sidebar-toggle-view">
-            <li class="nav-item sidebar-nav-item">
-                <a href="#" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
-                <ul class="nav sub-group-menu">
-                    <li class="nav-item">
-                        <a href="index" class="nav-link"><i class="fas fa-angle-right"></i>Admin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="all-student" class="nav-link"><i class="fas fa-angle-right"></i>Students</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item sidebar-nav-item">
-                <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>My Students</span></a>
-                <ul class="nav sub-group-menu">
-                    <li class="nav-item">
-                        <a href="all-student" class="nav-link"><i class="fas fa-angle-right"></i>All
-                            Students</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="student-details" class="nav-link"><i class="fas fa-angle-right"></i>Student Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="admit-form" class="nav-link"><i class="fas fa-angle-right"></i>Admission Form</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="student-promotion" class="nav-link"><i class="fas fa-angle-right"></i>Student Promotion</a>
-                    </li>
-                </ul>
+            
+        <li class="nav-item">
+                <a href="index.php" class="nav-link"><i class="flaticon-script"></i><span>Dashboard</span></a>
             </li>
 
+            <?php if (isset($_SESSION['active_course_id'])) { ?>
+                <li class="nav-item sidebar-nav-item">
+                    <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>My Students</span></a>
+                    <ul class="nav sub-group-menu">
+                        <li class="nav-item">
+                            <a href="all-student" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="student-details" class="nav-link"><i class="fas fa-angle-right"></i>Student Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="admit-form" class="nav-link"><i class="fas fa-angle-right"></i>Admission Form</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="student-promotion" class="nav-link"><i class="fas fa-angle-right"></i>Student Promotion</a>
+                        </li>
+                    </ul>
+                </li>
+            <?php } ?>
 
             <li class="nav-item sidebar-nav-item">
                 <a href="all-courses" class="nav-link"><i class="flaticon-open-book"></i><span>My Courses</span></a>
@@ -47,26 +42,12 @@
                     <li class="nav-item">
                         <a href="active-courses" class="nav-link"><i class="fas fa-angle-right"></i>Active Courses</a>
                     </li>
-                </ul>
-            </li>
-
-
-
-
-
-            <li class="nav-item sidebar-nav-item">
-                <a href="#" class="nav-link"><i class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
-                <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="all-class" class="nav-link"><i class="fas fa-angle-right"></i>All
-                            Classes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="add-class" class="nav-link"><i class="fas fa-angle-right"></i>Add New
-                            Class</a>
+                        <a href="active-practical-courses" class="nav-link"><i class="fas fa-angle-right"></i>Active Practical Courses</a>
                     </li>
                 </ul>
             </li>
+
 
             <li class="nav-item">
                 <a href="student-attendence" class="nav-link"><i class="flaticon-checklist"></i><span>Attendence</span></a>
