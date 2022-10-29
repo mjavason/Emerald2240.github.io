@@ -792,8 +792,8 @@ require_once('functions/functions.php');
                         </div>
                     </div>
                 </div>
-               <!-- All Subjects Area End Here -->
-               <footer class="footer-wrap-layout1">
+                <!-- All Subjects Area End Here -->
+                <footer class="footer-wrap-layout1">
                     <?php require_once('includes/footer.php') ?>
                 </footer>
             </div>

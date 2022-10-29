@@ -463,8 +463,10 @@ function getCoursesHandledByLecturer($id)
     $coursesTaken = json_decode($result[0]['course_handling'], true);
     sort($coursesTaken);
 
+    createLog('Success', 'getCoursesHandledByLecturer');
     return $coursesTaken;
   } else {
+    createLog('Failed', 'getCoursesHandledByLecturer');
     return false;
   }
 }
@@ -476,8 +478,10 @@ function getCourseInfo($id)
 
   $result = $db_handle->selectAllWhere('courses', 'id', $id);
   if (isset($result)) {
+    createLog('Success', 'getCourseInfo');
     return $result[0];
   } else {
+    createLog('Failed', 'getCourseInfo');
     return false;
   }
 }
@@ -488,9 +492,11 @@ function getDepartmentInfo($id)
 
   $result = $db_handle->selectAllWhere('departments', 'id', $id);
   if (isset($result)) {
+    createLog('Success', 'getDepartmentInfo');
     return $result[0];
   } else {
     return false;
+    createLog('Failed', 'getDepartmentInfo');
   }
 }
 
@@ -501,8 +507,10 @@ function getActiveCoursesPerLecturer($id)
   $result = $db_handle->selectAllWhere('results', 'lecturer_id', $id);
 
   if (isset($result)) {
+    createLog('Success', 'getActivecoursesPerLecturer');
     return $result;
   } else {
+    createLog('Failed', 'getActivecoursesPerLecturer');
     return false;
   }
 }
@@ -514,8 +522,10 @@ function getActivePracticalCoursesPerLecturer($id)
   $result = $db_handle->selectAllWhereWith2Conditions('results', 'practical_lecturer_id', $id, 'has_practical', 1);
 
   if (isset($result)) {
+    createLog('Success', 'getActivePracticalCoursesPerLecturer');
     return $result;
   } else {
+    createLog('Failed', 'getActivePracticalCoursesPerLecturer');
     return false;
   }
 }
@@ -523,14 +533,13 @@ function getActivePracticalCoursesPerLecturer($id)
 function createNewCourseSession($lecturerId, $courseId, $courseCredits, $studentSet, $semester, $hasPractical, $practicalLecturerId)
 {
   global $db_handle;
-
   $courseCredits = sanitize($courseCredits, 'clean');
-  if ($practicalLecturerId = 'null') {
+  if ($practicalLecturerId == 'null') {
     $practicalLecturerId = $lecturerId;
   }
 
   $query = "INSERT INTO `results` (
-  `lecturer_id`,
+    `lecturer_id`,
   `course_id`,	
   `course_credits`,
   `set_year`,
@@ -545,7 +554,13 @@ function createNewCourseSession($lecturerId, $courseId, $courseCredits, $student
     '$semester',
     '$hasPractical',
     '$practicalLecturerId');";
-  return $db_handle->runQueryWithoutResponse($query);
+  if ($db_handle->runQueryWithoutResponse($query)) {
+    createLog('Success', 'createNewCourseSession');
+    return true;
+  } else {
+    createLog('Failed', 'createNewCourseSession');
+    return false;
+  }
 }
 
 function getLecturerId($lecturerName)
@@ -558,14 +573,17 @@ function getLecturerId($lecturerName)
   foreach ($fullName as $name) {
     $result = $db_handle->selectAllWhere('lecturers', 'first_name', $name);
     if (isset($result)) {
+      createLog('Success', 'getLecturerId');
       return $result[0]['id'];
     } else {
       $result2 = $db_handle->selectAllWhere('lecturers', 'last_name', $name);
       if (isset($result2)) {
+        createLog('Success on new try', 'getLecturerId');
         return $result2[0]['id'];
       }
     }
   }
+  createLog('Failed', 'getLecturerId');
   return false;
 }
 
@@ -575,6 +593,7 @@ function checkForDuplicateWithTwoColumns($tableName, $col1, $val1, $col2, $val2)
   //$response = [];
   $result = $db_handle->selectAllWhereWith2Conditions($tableName, $col1, $val1, $col2, $val2);
 
+  createLog('Ambigous', 'checkForDuplicateWithTwoColumns');
   return isset($result) && count($result) > 0;
 }
 
@@ -584,18 +603,20 @@ function checkForDuplicate($tableName, $col1, $val1)
   //$response = [];
   $result = $db_handle->selectAllWhere($tableName, $col1, $val1);
 
+  createLog('Ambigous', 'checkForDuplicate');
   return isset($result) && count($result) > 0;
 }
 
 function getLecturerName($id)
 {
-
   global $db_handle;
 
   $result = $db_handle->selectAllWhere('lecturers', 'id', $id);
   if (isset($result)) {
+    createLog('Success', 'getLecturerName');
     return $result[0]['first_name'] . ' ' . $result[0]['last_name'];
   } else {
+    createLog('Failed', 'getLecturerName');
     return false;
   }
 }
@@ -605,14 +626,13 @@ function updateCourseSession($resultId, $lecturerId, $courseId, $courseCredits, 
   global $db_handle;
 
   $courseCredits = sanitize($courseCredits, 'clean');
-  if ($practicalLecturerId = 'null') {
+  if ($practicalLecturerId == 'null') {
     $practicalLecturerId = $lecturerId;
   }
 
+
   $query = "UPDATE `results` SET 
-  `set_level` = '3',
-  `lecturer_id`= $lecturerId,
-  `course_id`= $courseId,
+  `set_level` = '$studentSet',
   `course_credits` = $courseCredits,
   `set_year` = '$studentSet',
   `semester` = $semester,	
@@ -620,16 +640,159 @@ function updateCourseSession($resultId, $lecturerId, $courseId, $courseCredits, 
   `practical_lecturer_id` = $practicalLecturerId
    WHERE `results`.`id` = $resultId";
 
-  return $db_handle->runQueryWithoutResponse($query);
+  if ($db_handle->runQueryWithoutResponse($query)) {
+    createLog('Success', 'updateCourseSession');
+    return true;
+  } else {
+    createLog('Failed', 'updateCourseSession');
+    return false;
+  }
+}
+
+function calculateStudentLevel($set)
+{
+  $set = explode('/', $set);
+  $year = date('Y');
+  $level = 0;
+  if (isset($set[0])) {
+    $level = ($year - $set[0]);
+  }
+  createLog('Success', 'calculateStudentLevel');
+  if ($level < 1) {
+    return 1;
+  }
+  return ($level);
+}
+
+function loadSessions()
+{
+  $limit = 6;
+  $year = date('Y') - 6;
+  for ($i = 0; $i < 6; $i++) {
+    echo '<option value="' . ($year + $i) . '/' . ($year + $i + 1) . '">' . ($year + $i) . '/' . ($year + $i + 1) . ' (' . ($limit)  . '00 Level)</option>';
+
+    // <option value="2017/2018">2017/2018</option>
+    // <option value="2018/2019">2018/2019</option>
+    // <option value="2019/2020">2019/2020</option>
+    // <option value="2020/2021">2020/2021</option>
+    // <option value="2021/2022">2021/2022</option>
+    // <option value="2022/2023">2022/2023</option>
+    $limit--;
+  }
+  createLog('Success', 'loadSessions');
+}
+
+function loadStudentsForParticularCourseSession($session)
+{
+  global $db_handle;
+  $carryOverStudents = [];
+  $result = $db_handle->selectAllWhere('students', 'set_year', $session);
+  if (isset($result)) {
+    foreach ($result as $student) {
+      echo '<option value="' . ($student['reg_no']) . '">' . ($student['first_name']) . ' ' . ($student['last_name']) . ' | ' . ($student['reg_no']) . '</option>';
+    }
+    createLog('Success', 'loadStudentsForParticularCourseSession');
+    return true;
+  } else {
+    createLog('Failed', 'loadStudentsForParticularCourseSession');
+    return false;
+  }
+}
+
+function activateCourse($courseId, $tableId, $level, $setYear)
+{
+  if (isset($courseId)) {
+    $courseInfo = getCourseInfo($courseId);
+    $_SESSION['active_course_id'] = $courseId;
+    $_SESSION['active_course_table_id'] = $tableId;
+    $_SESSION['active_course_name'] = $courseInfo['course_name'];
+    $_SESSION['active_course_code'] = $courseInfo['course_code'];
+    $_SESSION['active_course_department_id'] = $courseInfo['department_id'];
+    $_SESSION['active_course_level'] = $level;
+    $_SESSION['active_course_set_year'] = $setYear;
+    $_SESSION['active_course_grades'] = getResults($tableId);
+  }
+  createLog('Success', 'activateCourse');
+}
+
+function getResults($resultId)
+{
+
+  global $db_handle;
+
+  $result = $db_handle->selectAllWhere('results', 'id', $resultId);
+  if (isset($result)) {
+    $resultsJson = $result[0]['results'];
+    createLog('Success', 'getResults');
+    return json_decode($resultsJson, true);
+  } else {
+    createLog('Failed', 'getResults');
+    return false;
+  }
+}
+
+function returnCompiledResult($resultId, $regNum)
+{
+  // $id = 2071;
+  // $regNum = '2017030180311';
+  $results = getResults($resultId);
+
+  $incourseTotal = 0;
+  $incourseAbsoluteTotal = 0;
+
+  $examTotal = 0;
+  $examAbsoluteTotal = 0;
+
+  foreach ($results as $result) {
+    if ($result['reg_num'] == $regNum) {
+      $resultIncourse = $result['incourse'];
+      $resultExam = $result['exam'];
+
+      foreach ($resultIncourse as $incourse) {
+        $incourseAbsoluteTotal += $incourse['total'];
+        $incourseTotal += $incourse['score'];
+      }
+
+      foreach ($resultExam as $exam) {
+        $examAbsoluteTotal += $exam['total'];
+        $examTotal += $exam['score'];
+      }
+
+
+
+      $incourse = 30 * ((($incourseTotal / $incourseAbsoluteTotal) * 100) / 100);
+      //echo ceil($incourse);
+
+      //echo '<br>';
+
+      $exam = 70 * ((($incourseTotal / $incourseAbsoluteTotal) * 100) / 100);
+      //echo ceil($exam);
+
+      createLog('Successful', 'returnCompiledResult');
+      return (array("incourse" => ceil($incourse), "exam" => ceil($exam)));
+    }
+  }
+  createLog('Failed', 'returnCompiledResult');
+  return false;
 }
 
 
+function createLog($title, $description)
+{
+  global $db_handle;
 
+  $title = sanitize($title, 'clean');
+  $description = sanitize($description, 'none');
 
-
-
-
-
+  $query = "INSERT INTO `log` (
+    `log_title`,
+    `log_description`
+         ) VALUES (
+    '$title', 
+    '$description'
+         )";
+  return $db_handle->runQueryWithoutResponse($query);
+}
 
 
 

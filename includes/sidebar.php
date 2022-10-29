@@ -6,9 +6,9 @@
     </div>
     <div class="sidebar-menu-content">
         <ul class="nav nav-sidebar-menu sidebar-toggle-view">
-            
-        <li class="nav-item">
-                <a href="index.php" class="nav-link"><i class="flaticon-script"></i><span>Dashboard</span></a>
+
+            <li class="nav-item">
+                <a href="index" class="nav-link"><i class="flaticon-script"></i><span>Dashboard</span></a>
             </li>
 
             <?php if (isset($_SESSION['active_course_id'])) { ?>
@@ -21,12 +21,6 @@
                         </li>
                         <li class="nav-item">
                             <a href="student-details" class="nav-link"><i class="fas fa-angle-right"></i>Student Details</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="admit-form" class="nav-link"><i class="fas fa-angle-right"></i>Admission Form</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="student-promotion" class="nav-link"><i class="fas fa-angle-right"></i>Student Promotion</a>
                         </li>
                     </ul>
                 </li>
@@ -82,7 +76,9 @@
             <li class="nav-item">
                 <a href="account-settings" class="nav-link"><i class="flaticon-settings"></i><span>Account</span></a>
             </li>
-
+            <li class="nav-item">
+                <a href="test.php" class="nav-link"><i class="flaticon-script"></i><span>Test PHP Page</span></a>
+            </li>
             <li class="nav-item">
                 <?php if (isset($_SESSION['active_course_id'])) { ?>
                     <a href="active-courses" class="nav-link"><i class="flaticon-bulb"></i><span><?= $_SESSION['active_course_name'] ?> <span>(<?= $_SESSION['active_course_code'] ?>)</span></span></a>

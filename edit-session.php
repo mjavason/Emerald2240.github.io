@@ -4,6 +4,7 @@ require_once('functions/functions.php');
 
 if (isset($_GET['course_id']) && isset($_GET['semester']) && isset($_GET['course_credits']) && isset($_GET['set']) && isset($_GET['practical_lecturer_name']) && isset($_GET['edit'])) {
     $_SESSION['course_id'] = $_GET['course_id'];
+    $_SESSION['result_id'] = $_GET['result_id'];
     if (isset($_GET['edit'])) {
         $_SESSION['course_edit'] = true;
     } else {
@@ -72,13 +73,7 @@ if (isset($_GET['course_id']) && isset($_GET['semester']) && isset($_GET['course
                                             <label>Class/Set <?= '(' . $_GET['set'] . ')'  ?>)</label>
                                             <select id="session_select" name="session" class="select2">
                                                 <option value="">Please Select</option>
-                                                <option value="2016/2017">2016/2017</option>
-                                                <option value="2017/2018">2017/2018</option>
-                                                <option value="2018/2019">2018/2019</option>
-                                                <option value="2019/2020">2019/2020</option>
-                                                <option value="2020/2021">2020/2021</option>
-                                                <option value="2021/2022">2021/2022</option>
-                                                <option value="2022/2023">2021/2022</option>
+                                                <?php loadSessions() ?>
                                             </select>
                                         </div>
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
@@ -103,7 +98,7 @@ if (isset($_GET['course_id']) && isset($_GET['semester']) && isset($_GET['course
                                             <input type="checkbox" class="form-control" name="has_practicals" id="has_practicals">
                                         </div> -->
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                                            <label>Practical Lecturer (Leave blank if no practicals exist or Add Personal name if you handle it yourself)</label>
+                                            <label>Practical Lecturer (Leave blank if no practicals exist or add personal name if you handle it yourself)</label>
                                             <input onkeyup='simpleAsyncSearch("functions/ajax.php", "lecturer_search_input")' id="lecturer_search_input" name="practical_lecturer_name" type="text" placeholder="" class="form-control" value="<?= $_GET['practical_lecturer_name'] ?>">
                                             <div class="" id="line"></div>
                                             <!-- line loader end-->

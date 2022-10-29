@@ -12,9 +12,9 @@ if (isset($_GET['course_id'])) {
 <html class="no-js" lang="">
 
 <head>
-    <title>AKKHOR | Exam Grade</title>
-    <meta name="description" content="">
-    <?php require_once('includes/head.php'); ?>
+    <title>New Session</title>
+        <meta name="description" content="">
+        <?php require_once('includes/head.php'); ?>
 </head>
 
 <body>
@@ -49,7 +49,7 @@ if (isset($_GET['course_id'])) {
                             <div class="card-body">
                                 <div class="heading-layout1">
                                     <div class="item-title">
-                                        <h3>Add New Course Session</h3>
+                                        <h3>Add New Course Session: <?= $_GET['course_name'] ?>(<?= $_GET['course_code'] ?>)</h3>
                                     </div>
                                     <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
@@ -67,13 +67,7 @@ if (isset($_GET['course_id'])) {
                                             <label>Class/Set</label>
                                             <select id="session_select" name="session" class="select2">
                                                 <option value="">Please Select</option>
-                                                <option value="2016/2017">2016/2017</option>
-                                                <option value="2017/2018">2017/2018</option>
-                                                <option value="2018/2019">2018/2019</option>
-                                                <option value="2019/2020">2019/2020</option>
-                                                <option value="2020/2021">2020/2021</option>
-                                                <option value="2021/2022">2021/2022</option>
-                                                <option value="2022/2023">2021/2022</option>
+                                                <?php loadSessions() ?>
                                             </select>
                                         </div>
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">

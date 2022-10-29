@@ -155,8 +155,9 @@ function createNewCourseSession(url, dataRequest) {
         dataRequest,//{ myData: 'This is my data.' }, // data to be submit
         function (data, status, jqXHR) {// success callback
             //$('#ajax_result').value = ('status: ' + status + ', data: ' + data + '<br>');
+            console.log(data);
             var dataParsed = JSON.parse(data);
-            console.log(dataParsed);
+            //console.log(dataParsed);
             //removeLoader();
 
             if (dataParsed[0].error == null) {

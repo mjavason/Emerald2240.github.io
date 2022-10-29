@@ -77,48 +77,47 @@ require_once('functions/functions.php');
                                         </thead>
                                         <tbody>
                                             <?php $coursesHandling = getCoursesHandledByLecturer($_SESSION['lecturer_id']);
-                                            if($coursesHandling){
-                                            foreach ($coursesHandling as $course) {
-                                                $courseInfo = getCourseInfo($course['course_id']);
-                                                if ($courseInfo) {
+                                            if ($coursesHandling) {
+                                                foreach ($coursesHandling as $course) {
+                                                    $courseInfo = getCourseInfo($course['course_id']);
+                                                    if ($courseInfo) {
                                             ?>
-                                                    <?php
-                                                    if (isset($_SESSION['active_course_id'])) {
-                                                        if ($_SESSION['active_course_id'] == $course['course_id']) { ?>
-                                                            <tr class="text-success">
-                                                            <?php } else { ?>
-                                                            <tr>
-                                                            <?php }
-                                                    } else { ?>
-                                                            <tr>
-                                                            <?php } ?>
+                                                        <?php
+                                                        if (isset($_SESSION['active_course_id'])) {
+                                                            if ($_SESSION['active_course_id'] == $course['course_id']) { ?>
+                                                                <tr class="text-success">
+                                                                <?php } else { ?>
+                                                                <tr>
+                                                                <?php }
+                                                        } else { ?>
+                                                                <tr>
+                                                                <?php } ?>
 
-                                                            <td>
-                                                                <div class="form-chec">
-                                                                    <!-- <input type="checkbox" class="form-check-input"> -->
-                                                                    <label class="form-check-label">#<?= $course['course_id'] ?></label>
-                                                                </div>
-                                                            </td>
-                                                            <td><?= $courseInfo['course_code'] ?></td>
-                                                            <td><?= $courseInfo['course_name'] ?></td>
-                                                            <!-- <td><?= $course['course_credits'] ?></td>
+                                                                <td>
+                                                                    <div class="form-chec">
+                                                                        <!-- <input type="checkbox" class="form-check-input"> -->
+                                                                        <label class="form-check-label">#<?= $course['course_id'] ?></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td><?= $courseInfo['course_code'] ?></td>
+                                                                <td><?= $courseInfo['course_name'] ?></td>
+                                                                <!-- <td><?= $course['course_credits'] ?></td>
                                                             <td><?= $course['course_level'] ?></td>
                                                             <td><?= $course['year_taken'] ?></td> -->
-                                                            <td>
-                                                                <div class="dropdown">
-                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                                        <span class="flaticon-more-button-of-three-dots"></span>
-                                                                    </a>
-                                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                                        <a class="dropdown-item" href="new-session?course_id=<?= $course['course_id'] ?>"><i class="fas fa-plus text-primary"></i>New Session</a>
-
-                                                                      
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                            <span class="flaticon-more-button-of-three-dots"></span>
+                                                                        </a>
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                                            <a class="dropdown-item" href="new-session?course_id=<?= $course['course_id'] ?>&course_code=<?= $courseInfo['course_code'] ?>&course_name=<?= $courseInfo['course_name'] ?>"><i class="fas fa-plus text-primary"></i>New Session</a>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            </td>
-                                                            </tr>
+                                                                </td>
+                                                                </tr>
                                                     <?php    }
-                                            } }?>
+                                                }
+                                            } ?>
                                         </tbody>
                                     </table>
                                 </div>

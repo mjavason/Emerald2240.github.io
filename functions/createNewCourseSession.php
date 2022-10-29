@@ -11,19 +11,24 @@ if (!isset($_POST)) {
         case (!empty($session_select) &&
             !empty($course_credits) &&
             !empty($semester_select)):
-
+            if (!isset($_SESSION['course_edit'])) {
+                $_SESSION['course_edit'] = false;
+            }
             if ($_SESSION['course_edit']) {
+                $_SESSION['course_edit'] = false;
                 #region Edit Session
                 if (!empty($lecturer_search_input)) {
                     $lecturerId =  getLecturerId($lecturer_search_input);
+                    //echo $lecturerId;
                     $has_practicals = 1;
                 } else {
                     $lecturerId = "null";
+                    // echo $lecturerId;
                     $has_practicals = 0;
                 }
 
                 if ($lecturerId) {
-                    if (updateCourseSession($_SESSION['course_id'], $_SESSION['lecturer_id'], $_SESSION['course_id'], $course_credits, $session_select, $semester_select, $has_practicals, $lecturerId)) {
+                    if (updateCourseSession($_SESSION['result_id'], $_SESSION['lecturer_id'], $_SESSION['course_id'], $course_credits, $session_select, $semester_select, $has_practicals, $lecturerId)) {
                         print json_encode([['success' => 'Course Session Updated!']]);
                     } else {
                         print json_encode([['error' => 'Database Error! Session not updated.']]);
