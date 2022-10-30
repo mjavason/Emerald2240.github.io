@@ -118,10 +118,10 @@ require_once('functions/functions.php');
                                                                             if (isset($_SESSION['active_course_id'])) {
                                                                                 if ($_SESSION['active_course_id'] == $course['course_id'] && $_SESSION['active_course_table_id'] == $course['id']) { ?>
                                                                                 <?php } else { ?>
-                                                                                    <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>&table_id=<?= $course['id'] ?>&level=<?= $course['set_level'] ?>&set_year=<?= $course['set_year'] ?>"><i class="fas fa-check text-orange-peel"></i>Work On</a>
+                                                                                    <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>&table_id=<?= $course['id'] ?>&level=<?= calculateStudentLevel($course['set_year']) ?>&set_year=<?= $course['set_year'] ?>"><i class="fas fa-check text-orange-peel"></i>Work On</a>
                                                                                 <?php }
                                                                             } else { ?>
-                                                                                <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>&table_id=<?= $course['id'] ?>&level=<?= $course['set_level'] ?>&set_year=<?= $course['set_year'] ?>"><i class="fas fa-check text-orange-peel"></i>Work On</a>
+                                                                                <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>&table_id=<?= $course['id'] ?>&level=<?= calculateStudentLevel($course['set_year']) ?>&set_year=<?= $course['set_year'] ?>"><i class="fas fa-check text-orange-peel"></i>Work On</a>
                                                                             <?php } ?>
                                                                         </div>
                                                                     </div>

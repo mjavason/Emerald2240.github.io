@@ -58,7 +58,9 @@ echo '<pre>';
 // $compiledResult = returnCompiledResult(1, '2017030180311');
 // print_r($compiledResult);
 
-$results = getResults(1);
-sort($results[0]['incourse']);
-print_r($results);
+// $results = getResults(1);
+// sort($results[0]['incourse']);
+// print_r($results);
+
+echo(getStudentName('2017030180311'));
 

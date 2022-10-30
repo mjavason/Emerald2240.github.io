@@ -17,7 +17,7 @@ $_SESSION['lecturer_id'] = $id;
 $_SESSION['lecturer_email'] = $postemail;
 $_SESSION['phone'] = $phone;
 
-$_SESSION['log'] = true;
+$_SESSION['super_log'] = true;
 
 
 /**
@@ -239,7 +239,7 @@ function confirmUserEmailAndPassword($postemail, $postpassword, $rememberMe)
       $_SESSION['phone'] = $phone;
       $_SESSION['student_reg'] = $row['reg_no'];
 
-      $_SESSION['log'] = true;
+      $_SESSION['super_log'] = true;
 
       // //This is the line of code for saving cookies AKA remember me
 
@@ -632,7 +632,6 @@ function updateCourseSession($resultId, $lecturerId, $courseId, $courseCredits, 
 
 
   $query = "UPDATE `results` SET 
-  `set_level` = '$studentSet',
   `course_credits` = $courseCredits,
   `set_year` = '$studentSet',
   `semester` = $semester,	
@@ -776,7 +775,6 @@ function returnCompiledResult($resultId, $regNum)
   return false;
 }
 
-
 function createLog($title, $description)
 {
   global $db_handle;
@@ -792,6 +790,21 @@ function createLog($title, $description)
     '$description'
          )";
   return $db_handle->runQueryWithoutResponse($query);
+}
+
+function getStudentName($regNum)
+{
+  global $db_handle;
+  //$response = [];
+  $result = $db_handle->selectAllWhere('students', 'reg_no', $regNum);
+
+  if (isset($result)) {
+    createLog('Success', 'getStudentName');
+    return ($result[0]['first_name'] . ' ' . $result[0]['last_name']);
+  } else {
+    createLog('Failed', 'getStudentName');
+    return false;
+  }
 }
 
 
