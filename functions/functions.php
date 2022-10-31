@@ -17,7 +17,7 @@ $_SESSION['lecturer_id'] = $id;
 $_SESSION['lecturer_email'] = $postemail;
 $_SESSION['phone'] = $phone;
 
-$_SESSION['super_log'] = true;
+// $_SESSION['super_log'] = true;
 
 
 /**
@@ -321,7 +321,6 @@ function getCoursesTakenByStudent($regNo)
 
   if (isset($result)) {
     $coursesTaken = json_decode($result[0]['courses_taken'], true);
-    sort($coursesTaken,);
 
     return $coursesTaken;
   } else {
@@ -402,8 +401,6 @@ function getResultsPerCourseTaken($coursesTaken, $i, $semester)
   }
 }
 
-
-
 function getPersonalResult($results, $regNo)
 {
   $resultsObj = json_decode($results, true);
@@ -470,7 +467,6 @@ function getCoursesHandledByLecturer($id)
     return false;
   }
 }
-
 
 function getCourseInfo($id)
 {
@@ -717,7 +713,9 @@ function loadStudentsForParticularCourseSession($session)
 {
   global $db_handle;
   $carryOverStudents = [];
-  $result = $db_handle->selectAllWhere('students', 'set_year', $session);
+  //$result = $db_handle->selectAllWhere('students', 'set_year', $session);
+  $result = $db_handle->selectAll('students');
+
   if (isset($result)) {
     foreach ($result as $student) {
       echo '<option value="' . ($student['reg_no']) . '">' . ($student['first_name']) . ' ' . ($student['last_name']) . ' | ' . ($student['reg_no']) . '</option>';
@@ -730,7 +728,7 @@ function loadStudentsForParticularCourseSession($session)
   }
 }
 
-function activateCourse($courseId, $tableId, $level, $setYear)
+function activateCourse($courseId, $tableId, $level, $setYear, $credits)
 {
   if (isset($courseId)) {
     $courseInfo = getCourseInfo($courseId);
@@ -741,6 +739,7 @@ function activateCourse($courseId, $tableId, $level, $setYear)
     $_SESSION['active_course_department_id'] = $courseInfo['department_id'];
     $_SESSION['active_course_level'] = $level;
     $_SESSION['active_course_set_year'] = $setYear;
+    $_SESSION['active_course_credits'] = $credits;
     $_SESSION['active_course_grades'] = getResults($tableId);
     if (empty($_SESSION['active_course_grades'])) {
       $_SESSION['active_course_grades'] = [];
@@ -859,11 +858,12 @@ function getStudentName($regNum)
   }
 }
 
-function addIncourse($studentRegNum, $gradeTitle, $gradeTotal, $studentScore)
+function addIncourse($studentRegNum, $gradeTitle, $gradeTotal, $studentScore, $courseId, $courseCredits, $courseSet)
 {
   $student = [];
   $incourseArray = [];
   $studentExists = false;
+  $tableExists = false;
   // $studentRegNum = array('reg_num' => $studentRegNum);
   $incourseArrayItem = array("title" => $gradeTitle, "total" => (int)$gradeTotal, "score" => (int)$studentScore);
 
@@ -877,23 +877,27 @@ function addIncourse($studentRegNum, $gradeTitle, $gradeTotal, $studentScore)
 
       //echo 'inside 1<br>';
       //checks if any incourse has been stored for this student before, if not create a brand new incourse field and add the new values
-      if ($_SESSION['active_course_grades'][$i]['incourse']) {
+      if (!isset($_SESSION['active_course_grades'][$i]['incourse'])) {
         $_SESSION['active_course_grades'][$i]['incourse'] = [];
         array_push($_SESSION['active_course_grades'][$i]['incourse'], $incourseArrayItem);
       } else {
         //search through all the incourses added for this student
         for ($j = 0; $j < count($_SESSION['active_course_grades'][$i]['incourse']); $j++) {
           //if the particular grade exists before, delete that one and replace it with a new one
-          if ($_SESSION['active_course_grades'][$i]['incourse'][$j]['title'] == $gradeTitle) {
-            unset($_SESSION['active_course_grades'][$i]['incourse'][$j]);
-            array_push($_SESSION['active_course_grades'][$i]['incourse'], $incourseArrayItem);
-            return ($_SESSION['active_course_grades']);
+          if (isset($_SESSION['active_course_grades'][$i]['incourse'][$j])) {
+            if ($_SESSION['active_course_grades'][$i]['incourse'][$j]['title'] == $gradeTitle) {
+              unset($_SESSION['active_course_grades'][$i]['incourse'][$j]);
+              array_push($_SESSION['active_course_grades'][$i]['incourse'], $incourseArrayItem);
+              return ($_SESSION['active_course_grades']);
+            }
           }
         }
+        array_push($_SESSION['active_course_grades'][$i]['incourse'], $incourseArrayItem);
       }
     } //end of searching for student entry in result
   }
   if (!$studentExists) {
+    updateStudentCourseTaken($studentRegNum, $courseId, $courseCredits, $courseSet);
     //echo 'inside 2<br>';
     //array_push($student, $studentRegNum);
     array_push($incourseArray, $incourseArrayItem);
@@ -906,7 +910,7 @@ function addIncourse($studentRegNum, $gradeTitle, $gradeTotal, $studentScore)
   return ($_SESSION['active_course_grades']);
 }
 
-function setExam($studentRegNum, $gradeTitle, $gradeTotal, $studentScore)
+function setExam($studentRegNum, $gradeTitle, $gradeTotal, $studentScore, $courseId, $courseCredits, $courseSet)
 {
   $student = [];
   $incourseArray = [];
@@ -927,6 +931,7 @@ function setExam($studentRegNum, $gradeTitle, $gradeTotal, $studentScore)
   if (!$studentExists) {
     //echo 'inside 2<br>';
     //array_push($student, $studentRegNum);
+    updateStudentCourseTaken($studentRegNum, $courseId, $courseCredits, $courseSet);
     array_push($incourseArray, $incourseArrayItem);
     // array_push($student, $incourseArray);
     $student['reg_num'] = $studentRegNum;
@@ -951,6 +956,54 @@ function deactivateCourseSession($resultId)
     createLog('Failed', 'deactivateCourseSessionResults');
     return false;
   }
+}
+
+function updateStudentCourseTaken($studentRegNum, $courseId, $courseCredits, $courseSet)
+{
+  global $db_handle;
+  $courseExists = false;
+  $allCoursesTaken = getCoursesTakenByStudent($studentRegNum);
+
+  if (!empty($allCoursesTaken)) {
+    foreach ($allCoursesTaken as $courses) {
+      if (isset($courses['course_id'])) {
+        if ($courses['course_id'] == $courseId && $courses['course_set'] == $courseSet) {
+          $courseExists = true;
+          createLog('Success', 'updateStudentCourseTaken');
+          return true;
+        }
+      }
+    }
+  }
+
+  if (!$courseExists) {
+    $newCourse = array("course_id" => $courseId, "course_credits" => $courseCredits, "course_set" => $courseSet);
+    array_push($allCoursesTaken, $newCourse);
+    $allCoursesTakenJson = json_encode($allCoursesTaken);
+    $query = "UPDATE `students` SET 
+  `courses_taken` = '$allCoursesTakenJson' 
+  WHERE `students`.`reg_no` = $studentRegNum";
+
+    if ($db_handle->runQueryWithoutResponse($query)) {
+      createLog('Success', 'updateStudentCourseTaken');
+      return true;
+    } else {
+      createLog('Failed', 'updateStudentCourseTaken');
+      return false;
+    }
+  }
+}
+
+function loadIncourseResults($resultIncourseRow, $targetColumn)
+{
+  foreach ($resultIncourseRow as $row) {
+    if ($row['title'] == $targetColumn) {
+      echo '<td class="text-success">' . $row['score'] . '</td>';
+      return true;
+    }
+  }
+  echo ('<td class="text-success"><i class="fas fa-times text-danger"></i></td>');
+  return false;
 }
 
 

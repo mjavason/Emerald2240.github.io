@@ -1,6 +1,10 @@
 <?php
 require_once('config/connect.php');
 require_once('functions/functions.php');
+
+if (!isset($_SESSION['super_log'])) {
+	gotoPage("../index");
+}
 ?>
 <!doctype html>
 <html class="no-js" lang="">

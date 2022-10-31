@@ -55,7 +55,7 @@
                             <li><a href="my-profile"><i class="flaticon-user"></i>My Profile</a></li>
                             <!-- <li><a href="#"><i class="flaticon-list"></i>Task</a></li> -->
                             <li><a href="https://google.com"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Contact Super Admins</a></li>
-                            <li><a href="account-settings"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
+                            <li><a onclick="showAlert('Coming Soon!')"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
                             <li><a onclick="logout()"><i class="flaticon-turn-off"></i>Log Out</a></li>
                         </ul>
                     </div>

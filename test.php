@@ -61,7 +61,9 @@ echo '<pre>';
 //$results = getResults(1);
 // sort($results[0]['incourse']);
 // echo(getStudentName('2017030180311'));
-print_r(json_encode($_SESSION['active_course_grades']));
+
+// print_r(json_encode($_SESSION['active_course_grades']));
+
 // print_r(addIncourse('2017030180311', 'Quiz 15', '10', '10'));
 //echo (json_encode(addIncourse('2517819440', 'Practicals', '100', '100')));
 
@@ -70,5 +72,7 @@ print_r(json_encode($_SESSION['active_course_grades']));
 // unset($_SESSION['active_course_grades'][0]['incourse']);
 // echo('Deleted<br>');
 
-
 // print_r($_SESSION['active_course_grades']);
+
+ print_r(json_encode($_SESSION));
+

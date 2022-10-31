@@ -2,11 +2,17 @@
 require_once('config/connect.php');
 require_once('functions/functions.php');
 
+if (!isset($_SESSION['super_log'])) {
+	gotoPage("../index");
+}
+
 if (isset($_GET['course_id'])) {
     $_SESSION['course_id'] = $_GET['course_id'];
 } else {
     gotoPage('all-courses');
 }
+
+
 ?>
 <!doctype html>
 <html class="no-js" lang="">

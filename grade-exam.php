@@ -2,8 +2,12 @@
 require_once('config/connect.php');
 require_once('functions/functions.php');
 
+if (!isset($_SESSION['super_log'])) {
+	gotoPage("../index");
+}
+
 if (isset($_GET['result_id']) && isset($_GET['course_id']) && isset($_GET['semester']) && isset($_GET['course_credits']) && isset($_GET['set']) && isset($_GET['practical_lecturer_name'])) {
-    activateCourse($_GET['course_id'], $_GET['result_id'], calculateStudentLevel($_GET['set']),  $_GET['set']);
+    activateCourse($_GET['course_id'], $_GET['result_id'], calculateStudentLevel($_GET['set']),  $_GET['set'], $_GET['course_credits']);
 } elseif (isset($_SESSION['active_course_id'])) {
 } else {
     gotoPage('active-courses');

@@ -2,6 +2,10 @@
 require_once('config/connect.php');
 require_once('functions/functions.php');
 
+if (!isset($_SESSION['super_log'])) {
+	gotoPage("../index");
+}
+
 if (isset($_GET['course_id']) && isset($_GET['semester']) && isset($_GET['course_credits']) && isset($_GET['set']) && isset($_GET['practical_lecturer_name']) && isset($_GET['edit'])) {
     $_SESSION['course_id'] = $_GET['course_id'];
     $_SESSION['result_id'] = $_GET['result_id'];

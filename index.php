@@ -2,6 +2,10 @@
 require_once('config/connect.php');
 require_once('functions/functions.php');
 
+if (!isset($_SESSION['super_log'])) {
+	gotoPage("../index");
+}
+
 gotoPage('active-courses');
 ?>
 <!doctype html>

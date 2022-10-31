@@ -2,8 +2,12 @@
 require_once('config/connect.php');
 require_once('functions/functions.php');
 
+if (!isset($_SESSION['super_log'])) {
+    gotoPage("../index");
+}
+
 if (isset($_GET['result_id']) && isset($_GET['course_id']) && isset($_GET['semester']) && isset($_GET['course_credits']) && isset($_GET['set']) && isset($_GET['practical_lecturer_name'])) {
-    activateCourse($_GET['course_id'], $_GET['result_id'], calculateStudentLevel($_GET['set']),  $_GET['set']);
+    activateCourse($_GET['course_id'], $_GET['result_id'], calculateStudentLevel($_GET['set']),  $_GET['set'], $_GET['course_credits']);
 } elseif (isset($_SESSION['active_course_id'])) {
 } else {
     gotoPage('active-courses');
@@ -14,7 +18,7 @@ if (isset($_GET['result_id']) && isset($_GET['course_id']) && isset($_GET['semes
 <html class="no-js" lang="">
 
 <head>
-    <title>AKKHOR | Grade Students</title>
+    <title>AKKHOR | Grade Students Incourse</title>
     <meta name="description" content="">
     <?php require_once('includes/head.php'); ?>
 </head>
@@ -35,12 +39,12 @@ if (isset($_GET['result_id']) && isset($_GET['course_id']) && isset($_GET['semes
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area">
-                    <h3>Grade</h3>
+                    <h3>Grade Incourse</h3>
                     <ul>
                         <li>
                             <a href="index">Home</a>
                         </li>
-                        <li>Grade</li>
+                        <li>Grade Incourse</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
@@ -51,7 +55,7 @@ if (isset($_GET['result_id']) && isset($_GET['course_id']) && isset($_GET['semes
                             <div class="card-body">
                                 <div class="heading-layout1">
                                     <div class="item-title">
-                                        <h3>Grade Students</h3>
+                                        <h3>Grade Students Incourse</h3>
                                     </div>
                                     <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>

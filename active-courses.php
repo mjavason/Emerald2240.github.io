@@ -1,6 +1,10 @@
 <?php
 require_once('config/connect.php');
 require_once('functions/functions.php');
+
+if (!isset($_SESSION['super_log'])) {
+    gotoPage("../index");
+}
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -113,16 +117,16 @@ require_once('functions/functions.php');
                                                                             <a class="dropdown-item" href="grade?result_id=<?= $course['id'] ?>&course_id=<?= $course['course_id'] ?>&semester=<?= $course['semester'] ?>&course_credits=<?= $course['course_credits'] ?>&set=<?= $course['set_year'] ?>&practical_lecturer_name=<?= getLecturerName($course['practical_lecturer_id']) ?>"><i class="fas fa-plus text-primary"></i>Add/Edit Incourse Grades</a>
                                                                             <a class="dropdown-item" href="grade-exam?result_id=<?= $course['id'] ?>&course_id=<?= $course['course_id'] ?>&semester=<?= $course['semester'] ?>&course_credits=<?= $course['course_credits'] ?>&set=<?= $course['set_year'] ?>&practical_lecturer_name=<?= getLecturerName($course['practical_lecturer_id']) ?>"><i class="fas fa-plus text-primary"></i>Add/Edit Exam Grades</a>
                                                                             <a class="dropdown-item" href="edit-session?result_id=<?= $course['id'] ?>&course_id=<?= $course['course_id'] ?>&semester=<?= $course['semester'] ?>&course_credits=<?= $course['course_credits'] ?>&set=<?= $course['set_year'] ?>&practical_lecturer_name=<?= getLecturerName($course['practical_lecturer_id']) ?>&edit=1"><i class="fas fa-pen text-dark-pastel-green"></i>Edit</a>
-                                                                            <a class="dropdown-item" href="course-grades"><i class="fas fa-calendar text-dark-pastel-green"></i>View Grades</a>
-                                                                            <a class="dropdown-item" onclick="getConfirmation('Deactivate Course Session', 'Are you sure you want to close this session? Once deactivated, it cannot be updated.', 'functions/deactivateCourseSession?result_id=<?= $course['id'] ?>')"><i class="fas fa-times text-danger"></i>Deactivate Permanently</a>
+                                                                            <a class="dropdown-item" href="course-grades?result_id=<?= $course['id'] ?>&course_id=<?= $course['course_id'] ?>&semester=<?= $course['semester'] ?>&course_credits=<?= $course['course_credits'] ?>&set=<?= $course['set_year'] ?>&practical_lecturer_name=<?= getLecturerName($course['practical_lecturer_id']) ?>"><i class="fas fa-calendar text-dark-pastel-green"></i>View Grades</a>
+                                                                            <a class="dropdown-item" onclick="getConfirmation('Deactivate Course Session', 'Are you sure you want to close this session? Once deactivated, it cannot be updated.', 'functions/deactivateCourseSession?result_id=<?= $course['id'] ?>')"><i class="fas fa-lock text-danger"></i>Close/Seal Permanently</a>
                                                                             <?php
                                                                             if (isset($_SESSION['active_course_id'])) {
                                                                                 if ($_SESSION['active_course_id'] == $course['course_id'] && $_SESSION['active_course_table_id'] == $course['id']) { ?>
                                                                                 <?php } else { ?>
-                                                                                    <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>&table_id=<?= $course['id'] ?>&level=<?= calculateStudentLevel($course['set_year']) ?>&set_year=<?= $course['set_year'] ?>"><i class="fas fa-check text-orange-peel"></i>Work On</a>
+                                                                                    <a class="dropdown-item" href="functions/activate-course.php?result_id=<?= $course['id'] ?>&course_id=<?= $course['course_id'] ?>&semester=<?= $course['semester'] ?>&course_credits=<?= $course['course_credits'] ?>&set=<?= $course['set_year'] ?>&practical_lecturer_name=<?= getLecturerName($course['practical_lecturer_id']) ?>"><i class="fas fa-check text-orange-peel"></i>Work On</a>
                                                                                 <?php }
                                                                             } else { ?>
-                                                                                <a class="dropdown-item" href="functions/activate-course.php?course_id=<?= $course['course_id'] ?>&table_id=<?= $course['id'] ?>&level=<?= calculateStudentLevel($course['set_year']) ?>&set_year=<?= $course['set_year'] ?>"><i class="fas fa-check text-orange-peel"></i>Work On</a>
+                                                                                <a class="dropdown-item" href="functions/activate-course.php?result_id=<?= $course['id'] ?>&course_id=<?= $course['course_id'] ?>&semester=<?= $course['semester'] ?>&course_credits=<?= $course['course_credits'] ?>&set=<?= $course['set_year'] ?>&practical_lecturer_name=<?= getLecturerName($course['practical_lecturer_id']) ?>"><i class="fas fa-check text-orange-peel"></i>Work On</a>
                                                                             <?php } ?>
                                                                         </div>
                                                                     </div>

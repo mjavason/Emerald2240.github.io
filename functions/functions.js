@@ -1057,6 +1057,11 @@ function updateResults(url, dataRequest) {
             //removeLoader();
 
             if (dataParsed[0].error == null) {
+                if(dataParsed.exam == true){
+                    destination = 'grade-exam';
+                }else{
+                    destination = 'grade';
+                }
                 swal(dataParsed[0].success, {
                     title: "Success",
                     icon: "success"
@@ -1065,10 +1070,10 @@ function updateResults(url, dataRequest) {
                     .then((value) => {
                         if (value) {
                             //swal(`The returned value is: ${value}`);
-                            window.location = 'grade';
+                            window.location = destination;
                         } else {
                             //swal(`The returned value is: ${value}`);
-                            window.location = 'grade';
+                            window.location = destination;
                         }
                     });
 

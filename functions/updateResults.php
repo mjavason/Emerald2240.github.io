@@ -17,13 +17,17 @@ if (!isset($_POST)) {
             // }
 
             if ($grade_title == "Exam") {
-                setExam($student_reg_number, $grade_title, $grade_total, $student_score);
+                setExam($student_reg_number, $grade_title, $grade_total, $student_score, $_SESSION['active_course_id'], $_SESSION['active_course_credits'], $_SESSION['active_course_set_year']);
             } else {
-                addIncourse($student_reg_number, $grade_title, $grade_total, $student_score);
+                addIncourse($student_reg_number, $grade_title, $grade_total, $student_score,  $_SESSION['active_course_id'], $_SESSION['active_course_credits'], $_SESSION['active_course_set_year']);
             }
 
             if (updateCourseSessionResult($_SESSION['active_course_table_id'], $_SESSION['active_course_grades'])) {
-                print json_encode([['success' => 'Grade Added For ' . $student_reg_number]]);
+                if ($grade_title == "Exam") {
+                    print json_encode([['success' => 'Grade Added For ' . $student_reg_number],['exam' => true]]);
+                } else {
+                    print json_encode([['success' => 'Grade Added For ' . $student_reg_number],['exam' => false]]);
+                }
             } else {
                 print json_encode([['error' => 'Database Error! Grade Not Saved.']]);
             }

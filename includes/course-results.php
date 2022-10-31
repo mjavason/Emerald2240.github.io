@@ -39,45 +39,25 @@
                                  <td class="text-left"><?= getStudentName($result['reg_num']) ?> (<?= $result['reg_num'] ?>)</td>
                                  <?php
                                     if (isset($result['incourse'])) {
-                                        foreach ($result['incourse'] as $incourse) {
                                     ?>
-                                         <!-- Quiz -->
-                                         <?php if ($incourse['title'] == "Quiz") { ?>
-                                             <td class="text-success"><?= $incourse['score'] ?></td>
-                                         <?php } else {
-                                                echo ('<td class="text-success"><i class="fas fa-times text-danger"></i></td>');
-                                            }
-                                            ?>
+                                     <!-- Quiz -->
+                                     <?php loadIncourseResults($result['incourse'], 'Quiz'); ?>
 
-                                         <!-- Assignment -->
-                                         <?php if ($incourse['title'] == "Assignment") { ?>
-                                             <td class="text-success"><?= $incourse['score'] ?></td>
-                                         <?php } else {
-                                                echo ('<td class="text-success"><i class="fas fa-times text-danger"></i></td>');
-                                            } ?>
+                                     <!-- Assignment -->
+                                     <?php loadIncourseResults($result['incourse'], 'Assignment'); ?>
 
-                                         <!-- Attendance -->
-                                         <?php if ($incourse['title'] == "Attendance") { ?>
-                                             <td class="text-success"><?= $incourse['score'] ?></td>
-                                         <?php } else {
-                                                echo ('<td class="text-success"><i class="fas fa-times text-danger"></i></td>');
-                                            } ?>
 
-                                         <!-- Project -->
-                                         <?php if ($incourse['title'] == "Project") { ?>
-                                             <td class="text-success"><?= $incourse['score'] ?></td>
-                                         <?php } else {
-                                                echo ('<td class="text-success"><i class="fas fa-times text-danger"></i></td>');
-                                            } ?>
+                                     <!-- Attendance -->
+                                     <?php loadIncourseResults($result['incourse'], 'Attendance'); ?>
 
-                                         <!-- Practicals -->
-                                         <?php if ($incourse['title'] == "Practicals") { ?>
-                                             <td class="text-success"><?= $incourse['score'] ?></td>
-                                 <?php } else {
-                                                echo ('<td class="text-success"><i class="fas fa-times text-danger"></i></td>');
-                                            }
-                                        }
-                                    } else {
+
+                                     <!-- Project -->
+                                     <?php loadIncourseResults($result['incourse'], 'Project'); ?>
+
+                                     <!-- Practicals -->
+                                     <?php loadIncourseResults($result['incourse'], 'Practicals'); ?>
+
+                                 <?php  } else {
                                         echo ('<td class="text-success"><i class="fas fa-times text-danger"></i></td>');
                                         echo ('<td class="text-success"><i class="fas fa-times text-danger"></i></td>');
                                         echo ('<td class="text-success"><i class="fas fa-times text-danger"></i></td>');
