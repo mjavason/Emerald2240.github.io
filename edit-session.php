@@ -76,6 +76,8 @@ if (isset($_GET['course_id']) && isset($_GET['semester']) && isset($_GET['course
                                                 <?php loadSessions() ?>
                                             </select>
                                         </div>
+
+                                        
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>Credits</label>
                                             <input value="<?= $_GET['course_credits'] ?>" class="form-control" type="number" name="course_credits" id="course_credits">

@@ -58,9 +58,10 @@ echo '<pre>';
 // $compiledResult = returnCompiledResult(1, '2017030180311');
 // print_r($compiledResult);
 
-// $results = getResults(1);
+$results = getResults(1);
 // sort($results[0]['incourse']);
-// print_r($results);
-
-echo(getStudentName('2017030180311'));
+// echo(getStudentName('2017030180311'));
+// print_r($_SESSION['active_course_grades']);
+// print_r(addIncourse('2017030180311', 'Quiz 15', '10', '10'));
+//echo(json_encode(addIncourse('2017030180311', 'Quiz 15', '10', '10')));
 

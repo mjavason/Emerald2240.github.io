@@ -1005,6 +1005,49 @@ function selectLecturer(val) {
     })
 }
 
+function updateResults(url, dataRequest) {
+    console.log(dataRequest);
+    setLoader();
+    $.post(url,   // url
+        dataRequest,//{ myData: 'This is my data.' }, // data to be submit
+        function (data, status, jqXHR) {// success callback
+            //$('#ajax_result').value = ('status: ' + status + ', data: ' + data + '<br>');
+            console.log(data);
+            var dataParsed = JSON.parse(data);
+            //console.log(dataParsed);
+            //removeLoader();
+
+            if (dataParsed[0].error == null) {
+                swal(dataParsed[0].success, {
+                    title: "Success",
+                    icon: "success"
+                })
+
+                    .then((value) => {
+                        if (value) {
+                            //swal(`The returned value is: ${value}`);
+                            window.location = 'add-incourse';
+                        } else {
+                            //swal(`The returned value is: ${value}`);
+                            window.location = 'add-incourse';
+                        }
+                    });
+
+            } else {
+                swal({
+                    //title: "New Course",
+                    title: "Error",
+                    icon: "error",
+                    //text: "Error: " + dataParsed[0].error
+                    text: dataParsed[0].error
+                    //button: "Got It!",
+                });
+
+            }
+
+        })
+}
+
 // function dollarFormat(number) {
 //     //window.alert('This naira format function is working');
 //     console.log('inside dollarFormat function');

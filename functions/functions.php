@@ -648,6 +648,23 @@ function updateCourseSession($resultId, $lecturerId, $courseId, $courseCredits, 
   }
 }
 
+function updateCourseSessionResult($resultId, $results)
+{
+  global $db_handle;
+  $resultJson = json_encode($results);
+  $query = "UPDATE `results` SET 
+  `results` = '$resultJson' 
+  WHERE `results`.`id` = $resultId";
+
+  if ($db_handle->runQueryWithoutResponse($query)) {
+    createLog('Success', 'updateCourseSessionResults');
+    return true;
+  } else {
+    createLog('Failed', 'updateCourseSessionResults');
+    return false;
+  }
+}
+
 function calculateStudentLevel($set)
 {
   $set = explode('/', $set);
@@ -710,6 +727,9 @@ function activateCourse($courseId, $tableId, $level, $setYear)
     $_SESSION['active_course_level'] = $level;
     $_SESSION['active_course_set_year'] = $setYear;
     $_SESSION['active_course_grades'] = getResults($tableId);
+    if (empty($_SESSION['active_course_grades'])) {
+      $_SESSION['active_course_grades'] = [];
+    }
   }
   createLog('Success', 'activateCourse');
 }
@@ -803,6 +823,52 @@ function getStudentName($regNum)
     return ($result[0]['first_name'] . ' ' . $result[0]['last_name']);
   } else {
     createLog('Failed', 'getStudentName');
+    return false;
+  }
+}
+
+function addIncourse($studentRegNum, $gradeTitle, $gradeTotal, $studentScore)
+{
+  $student = [];
+  $incourseArray = [];
+  // $studentRegNum = array('reg_num' => $studentRegNum);
+  $incourseArrayItem = array("title" => $gradeTitle, "total" => (int)$gradeTotal, "score" => (int)$studentScore);
+
+  $studentExists = false;
+  for ($i = 0; $i < count($_SESSION['active_course_grades']); $i++) {
+    if ($_SESSION['active_course_grades'][$i]['reg_num'] == $studentRegNum) {
+      //echo 'inside 1<br>';
+      $previousIncourse = $_SESSION['active_course_grades'][0]['incourse'];
+      array_push($_SESSION['active_course_grades'][$i]['incourse'], $incourseArrayItem);
+      return ($_SESSION['active_course_grades']);
+    }
+  }
+  if (!$studentExists) {
+    //echo 'inside 2<br>';
+    //array_push($student, $studentRegNum);
+    array_push($incourseArray, $incourseArrayItem);
+    // array_push($student, $incourseArray);
+    $student['reg_num'] = $studentRegNum;
+    $student['incourse'] = $incourseArray;
+    array_push($_SESSION['active_course_grades'], $student);
+  }
+
+  return ($_SESSION['active_course_grades']);
+}
+
+function addCourseSessionTask($resultId, $taskType, $taskTitle, $gradeTotal)
+{
+  global $db_handle;
+  $resultJson = json_encode($results);
+  $query = "UPDATE `results` SET 
+  `results` = '$resultJson' 
+  WHERE `results`.`id` = $resultId";
+
+  if ($db_handle->runQueryWithoutResponse($query)) {
+    createLog('Success', 'updateCourseSessionResults');
+    return true;
+  } else {
+    createLog('Failed', 'updateCourseSessionResults');
     return false;
   }
 }

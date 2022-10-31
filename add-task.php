@@ -66,20 +66,12 @@ if (isset($_GET['result_id']) && isset($_GET['course_id']) && isset($_GET['semes
                                     <div class="row">
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>Incourse Name</label>
-                                            <!-- <input type="text" id="grade_title" placeholder="**Quiz 1" class="form-control"> -->
-                                            <select id="grade_title" class="select2">
-                                                <option value="">Please Select</option>
-                                                <option value="Quiz">Quiz</option>
-                                                <option value="Attendance">Attendance</option>
-                                                <option value="Assignment">Assignment</option>
-                                                <option value="Project">Project</option>
-                                                <option value="Practicals">Practicals</option>
-                                            </select>
+                                            <input type="text" id="grade_title" placeholder="**Quiz 1" class="form-control">
                                         </div>
 
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>Score Total</label>
-                                            <input id="grade_total" value="10" readonly type="text" placeholder="" class="form-control">
+                                            <input id="grade_total" type="text" placeholder="" class="form-control">
                                         </div>
 
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
@@ -138,7 +130,7 @@ if (isset($_GET['result_id']) && isset($_GET['course_id']) && isset($_GET['semes
                                         <thead>
                                             <tr>
                                                 <th class="text-left">Students</th>
-                                                <!-- <?php
+                                                <?php
                                                 if (isset($results[0]['incourse'])) {
                                                     foreach ($results[0]['incourse'] as $incourse) {
                                                 ?>
@@ -151,7 +143,7 @@ if (isset($_GET['result_id']) && isset($_GET['course_id']) && isset($_GET['semes
                                                 ?>
                                                         <th><?= $exam['title'] ?></th>
                                                 <?php }
-                                                } ?> -->
+                                                } ?>
                                             </tr>
                                         </thead>
                                         <tbody>
