@@ -1,6 +1,8 @@
 <?php
 require_once('config/connect.php');
 require_once('functions/functions.php');
+
+gotoPage('active-courses');
 ?>
 <!doctype html>
 <html class="no-js" lang="">

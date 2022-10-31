@@ -504,7 +504,22 @@ function getActiveCoursesPerLecturer($id)
 {
   global $db_handle;
   //$response = [];
-  $result = $db_handle->selectAllWhere('results', 'lecturer_id', $id);
+  $result = $db_handle->selectAllWhere_inactive('results', 'lecturer_id', $id);
+
+  if (isset($result)) {
+    createLog('Success', 'getActivecoursesPerLecturer');
+    return $result;
+  } else {
+    createLog('Failed', 'getActivecoursesPerLecturer');
+    return false;
+  }
+}
+
+function getinactiveCoursesPerLecturer($id)
+{
+  global $db_handle;
+  //$response = [];
+  $result = $db_handle->selectAllWhere_active('results', 'lecturer_id', $id);
 
   if (isset($result)) {
     createLog('Success', 'getActivecoursesPerLecturer');
@@ -734,6 +749,23 @@ function activateCourse($courseId, $tableId, $level, $setYear)
   createLog('Success', 'activateCourse');
 }
 
+function deactivateCourse()
+{
+  if (isset($courseId)) {
+    unset($_SESSION['active_course_id']);
+    unset($_SESSION['active_course_table_id']);
+    unset($_SESSION['active_course_name']);
+    unset($_SESSION['active_course_code']);
+    unset($_SESSION['active_course_department_id']);
+
+    unset($_SESSION['active_course_level']);
+
+    unset($_SESSION['active_course_set_year']);
+    unset($_SESSION['active_course_grades']);
+  }
+  createLog('Success', 'deactivateCourse');
+}
+
 function getResults($resultId)
 {
 
@@ -831,17 +863,35 @@ function addIncourse($studentRegNum, $gradeTitle, $gradeTotal, $studentScore)
 {
   $student = [];
   $incourseArray = [];
+  $studentExists = false;
   // $studentRegNum = array('reg_num' => $studentRegNum);
   $incourseArrayItem = array("title" => $gradeTitle, "total" => (int)$gradeTotal, "score" => (int)$studentScore);
 
-  $studentExists = false;
   for ($i = 0; $i < count($_SESSION['active_course_grades']); $i++) {
+    // checks if student exists in database
     if ($_SESSION['active_course_grades'][$i]['reg_num'] == $studentRegNum) {
+      $studentExists = true;
+
+
+
+
       //echo 'inside 1<br>';
-      $previousIncourse = $_SESSION['active_course_grades'][0]['incourse'];
-      array_push($_SESSION['active_course_grades'][$i]['incourse'], $incourseArrayItem);
-      return ($_SESSION['active_course_grades']);
-    }
+      //checks if any incourse has been stored for this student before, if not create a brand new incourse field and add the new values
+      if ($_SESSION['active_course_grades'][$i]['incourse']) {
+        $_SESSION['active_course_grades'][$i]['incourse'] = [];
+        array_push($_SESSION['active_course_grades'][$i]['incourse'], $incourseArrayItem);
+      } else {
+        //search through all the incourses added for this student
+        for ($j = 0; $j < count($_SESSION['active_course_grades'][$i]['incourse']); $j++) {
+          //if the particular grade exists before, delete that one and replace it with a new one
+          if ($_SESSION['active_course_grades'][$i]['incourse'][$j]['title'] == $gradeTitle) {
+            unset($_SESSION['active_course_grades'][$i]['incourse'][$j]);
+            array_push($_SESSION['active_course_grades'][$i]['incourse'], $incourseArrayItem);
+            return ($_SESSION['active_course_grades']);
+          }
+        }
+      }
+    } //end of searching for student entry in result
   }
   if (!$studentExists) {
     //echo 'inside 2<br>';
@@ -856,19 +906,49 @@ function addIncourse($studentRegNum, $gradeTitle, $gradeTotal, $studentScore)
   return ($_SESSION['active_course_grades']);
 }
 
-function addCourseSessionTask($resultId, $taskType, $taskTitle, $gradeTotal)
+function setExam($studentRegNum, $gradeTitle, $gradeTotal, $studentScore)
+{
+  $student = [];
+  $incourseArray = [];
+  // $studentRegNum = array('reg_num' => $studentRegNum);
+  $incourseArrayItem = array("title" => $gradeTitle, "total" => (int)$gradeTotal, "score" => (int)$studentScore);
+
+  $studentExists = false;
+  for ($i = 0; $i < count($_SESSION['active_course_grades']); $i++) {
+    if ($_SESSION['active_course_grades'][$i]['reg_num'] == $studentRegNum) {
+      //echo 'inside 1<br>';
+      if (isset($_SESSION['active_course_grades'][$i]['exam'])) {
+        array_pop($_SESSION['active_course_grades'][$i]['exam']);
+        array_push($_SESSION['active_course_grades'][$i]['exam'], $incourseArrayItem);
+      }
+      return ($_SESSION['active_course_grades']);
+    }
+  }
+  if (!$studentExists) {
+    //echo 'inside 2<br>';
+    //array_push($student, $studentRegNum);
+    array_push($incourseArray, $incourseArrayItem);
+    // array_push($student, $incourseArray);
+    $student['reg_num'] = $studentRegNum;
+    $student['exam'] = $incourseArray;
+    array_push($_SESSION['active_course_grades'], $student);
+  }
+
+  return ($_SESSION['active_course_grades']);
+}
+
+function deactivateCourseSession($resultId)
 {
   global $db_handle;
-  $resultJson = json_encode($results);
   $query = "UPDATE `results` SET 
-  `results` = '$resultJson' 
+  `inactive` = '1' 
   WHERE `results`.`id` = $resultId";
 
   if ($db_handle->runQueryWithoutResponse($query)) {
-    createLog('Success', 'updateCourseSessionResults');
+    createLog('Success', 'deactivateCourseSessionResults');
     return true;
   } else {
-    createLog('Failed', 'updateCourseSessionResults');
+    createLog('Failed', 'deactivateCourseSessionResults');
     return false;
   }
 }

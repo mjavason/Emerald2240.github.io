@@ -16,7 +16,11 @@ if (!isset($_POST)) {
             //     $_SESSION['course_edit'] = false;
             // }
 
-            addIncourse($student_reg_number, $grade_title, $grade_total, $student_score);
+            if ($grade_title == "Exam") {
+                setExam($student_reg_number, $grade_title, $grade_total, $student_score);
+            } else {
+                addIncourse($student_reg_number, $grade_title, $grade_total, $student_score);
+            }
 
             if (updateCourseSessionResult($_SESSION['active_course_table_id'], $_SESSION['active_course_grades'])) {
                 print json_encode([['success' => 'Grade Added For ' . $student_reg_number]]);

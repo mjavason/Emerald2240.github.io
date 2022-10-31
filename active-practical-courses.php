@@ -110,8 +110,7 @@ require_once('functions/functions.php');
                                                                             <span class="flaticon-more-button-of-three-dots"></span>
                                                                         </a>
                                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                                            <a class="dropdown-item" href="add-incourse"><i class="fas fa-plus text-primary"></i>Add Incourse Grades</a>
-                                                                            <!-- <a class="dropdown-item" href="edit-session?result_id=<?= $course['id'] ?>&course_id=<?= $course['course_id'] ?>&semester=<?= $course['semester'] ?> &course_credits=<?= $course['course_credits'] ?>&set=<?= $course['set_year'] ?>&practical_lecturer_name=<?= getLecturerName($course['practical_lecturer_id']) ?>&edit=1"><i class="fas fa-pen text-dark-pastel-green"></i>Edit</a> -->
+                                                                            <a class="dropdown-item" href="grade"><i class="fas fa-plus text-primary"></i>Add Incourse Grades</a>
                                                                             <a class="dropdown-item" href="course-grades"><i class="fas fa-calendar text-dark-pastel-green"></i>View Grades</a>
                                                                             <?php
                                                                             if (isset($_SESSION['active_course_id'])) {

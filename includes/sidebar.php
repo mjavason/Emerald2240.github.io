@@ -11,7 +11,7 @@
                 <a href="index" class="nav-link"><i class="flaticon-script"></i><span>Dashboard</span></a>
             </li>
 
-            <?php if (isset($_SESSION['active_course_id'])) { ?>
+            <!-- <?php if (isset($_SESSION['active_course_id'])) { ?>
                 <li class="nav-item sidebar-nav-item">
                     <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>My Students</span></a>
                     <ul class="nav sub-group-menu">
@@ -24,7 +24,7 @@
                         </li>
                     </ul>
                 </li>
-            <?php } ?>
+            <?php } ?> -->
 
             <li class="nav-item sidebar-nav-item">
                 <a href="all-courses" class="nav-link"><i class="flaticon-open-book"></i><span>My Courses</span></a>
@@ -37,45 +37,45 @@
                         <a href="active-courses" class="nav-link"><i class="fas fa-angle-right"></i>Active Courses</a>
                     </li>
                     <li class="nav-item">
+                        <a href="inactive-courses" class="nav-link"><i class="fas fa-angle-right"></i>Closed Courses</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="active-practical-courses" class="nav-link"><i class="fas fa-angle-right"></i>Active Practical Courses</a>
                     </li>
                 </ul>
             </li>
 
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="student-attendence" class="nav-link"><i class="flaticon-checklist"></i><span>Attendence</span></a>
-            </li>
+            </li> -->
             <?php if (isset($_SESSION['active_course_id'])) { ?>
                 <li class="nav-item sidebar-nav-item">
                     <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Grades</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
+                            <a href="grade" class="nav-link"><i class="fas fa-angle-right"></i>Grade Incourse</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="grade-exam" class="nav-link"><i class="fas fa-angle-right"></i>Grade Exam</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="course-grades" class="nav-link"><i class="fas fa-angle-right"></i>View
                                 Results</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="add-incourse" class="nav-link"><i class="fas fa-angle-right"></i>Add Incourse
-                                Grades</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="add-exam" class="nav-link"><i class="fas fa-angle-right"></i>Add Exam
-                                Grades</a>
-                        </li>
+
                     </ul>
                 </li>
             <?php } ?>
 
 
-            <li class="nav-item">
-                <a href="notice-board" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
-            </li>
 
 
 
             <li class="nav-item">
-                <a href="account-settings" class="nav-link"><i class="flaticon-settings"></i><span>Account</span></a>
+                <a onclick="showAlert('Coming Soon!')" class="nav-link"><i class="flaticon-settings"></i><span>Account Settings</span></a>
             </li>
+            
             <li class="nav-item">
                 <a href="test.php" class="nav-link"><i class="flaticon-script"></i><span>Test PHP Page</span></a>
             </li>

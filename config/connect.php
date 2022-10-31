@@ -115,6 +115,20 @@ class DBController
 		return $result;
 	}
 
+	public function selectAllWhere_inactive($table, $where, $equals)
+	{
+		$query = "SELECT * FROM $table WHERE $where ='" . $equals . "' AND `inactive`= 0 ORDER by id DESC";
+		$result = $this->runQuery($query);
+		return $result;
+	}
+
+	public function selectAllWhere_active($table, $where, $equals)
+	{
+		$query = "SELECT * FROM $table WHERE $where ='" . $equals . "' AND `inactive`= 1 ORDER by id DESC";
+		$result = $this->runQuery($query);
+		return $result;
+	}
+
 	public function selectAllWhere_NotDeleted($table, $where, $equals)
 	{
 		$query = "SELECT * FROM $table WHERE $where ='" . $equals . "' AND `is_deleted` ='0' ORDER by id DESC";

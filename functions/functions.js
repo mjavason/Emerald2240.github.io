@@ -622,6 +622,17 @@ function showSweetAlert(alert) {
     }
 }
 
+function showAlert(message) {
+    swal({
+        //title: "New Course",
+        title: message,
+        icon: "warning",
+        //text: "Error: " + dataParsed[0].error
+        text: "Feature Still In Construction"
+        //button: "Got It!",
+    });
+}
+
 function sendInvestmentPaidRequest(url, dataRequest) {
     //console.log(dataRequest);
     swal({
@@ -796,8 +807,36 @@ function maxValue(inputElementId, max) {
     inputElement = document.getElementById(inputElementId);
     if (inputElement.value > max) {
         inputElement.value = max;
+        swal({
+            //title: "New Course",
+            title: "Error",
+            icon: "error",
+            //text: "Error: " + dataParsed[0].error
+            text: "Value can't exceed " + max
+            //button: "Got It!",
+        });
     }
     //console.log(max);
+}
+
+function getConfirmation(messageTitle, messageDescription, linkIfYes) {
+    swal({
+        title: messageTitle,
+        text: messageDescription,
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("Successfully Deactivated.", {
+                    icon: "success",
+                });
+                window.location = linkIfYes;
+            } else {
+                //swal("Great Choice!");
+            }
+        });
 }
 
 var myFilterBox = addFilterBox({
@@ -1026,10 +1065,10 @@ function updateResults(url, dataRequest) {
                     .then((value) => {
                         if (value) {
                             //swal(`The returned value is: ${value}`);
-                            window.location = 'add-incourse';
+                            window.location = 'grade';
                         } else {
                             //swal(`The returned value is: ${value}`);
-                            window.location = 'add-incourse';
+                            window.location = 'grade';
                         }
                     });
 
