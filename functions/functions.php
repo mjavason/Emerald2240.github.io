@@ -967,7 +967,7 @@ function updateStudentCourseTaken($studentRegNum, $courseId, $courseCredits, $co
   if (!empty($allCoursesTaken)) {
     foreach ($allCoursesTaken as $courses) {
       if (isset($courses['course_id'])) {
-        if ($courses['course_id'] == $courseId && $courses['course_set'] == $courseSet) {
+        if ($courses['course_id'] == $courseId && $courses['course_set'] == $courseSet && $courses['course_credits'] == $courseCredits) {
           $courseExists = true;
           createLog('Success', 'updateStudentCourseTaken');
           return true;
