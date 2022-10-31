@@ -8,7 +8,7 @@ switch ($_POST) {
     case (isset($_POST['login_email']) && isset($_POST['login_password'])):
         # code...
 
-        if (validateEmail($login_email)) {
+        if (validateEmail($login_email) && !validateLecturerEmail($student_email) && !validateSuperAdminEmail($student_email)) {
             print json_encode(confirmUserEmailAndPassword($login_email, $login_password, isset($login_remember_me)));
         } else {
             print json_encode([['error' => 'Invalid Email']]);
@@ -18,7 +18,7 @@ switch ($_POST) {
 
     case (isset($_POST['student_email']) && isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['student_gender']) && isset($_POST['student_phone']) && isset($_POST['student_reg']) && isset($_POST['student_department']) && isset($_POST['agree']) && isset($_POST['password1']) && isset($_POST['password2'])):
         if ($password1 === $password2) {
-            if (!validateEmail($student_email) && !validateStudentRegNumber($student_reg)) {
+            if (!validateEmail($student_email) && !validateStudentRegNumber($student_reg) && !validateLecturerEmail($student_email) && !validateSuperAdminEmail($student_email)) {
                 $departmentId = getDepartmentId($student_department);
                 if ($departmentId) {
                     if (createNewStudent($first_name, $last_name, $student_gender, $student_email, $student_phone, $student_reg, $departmentId, $password1)) {
