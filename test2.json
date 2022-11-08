@@ -30,6 +30,7 @@
                 "score": 25
             }
         ]
+       
     },
     {
         "reg_num": "2504338430",
@@ -48,6 +49,16 @@
                 "title": "Exam",
                 "total": 70,
                 "score": 25
+            }
+        ]
+    },
+    {
+        "reg_num": "2413626522",
+        "exam": [
+            {
+                "title": "Exam",
+                "total": 70,
+                "score": 4
             }
         ]
     }

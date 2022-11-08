@@ -866,8 +866,6 @@ function addIncourse($studentRegNum, $gradeTitle, $gradeTotal, $studentScore, $c
       $studentExists = true;
 
 
-
-
       //echo 'inside 1<br>';
       //checks if any incourse has been stored for this student before, if not create a brand new incourse field and add the new values
       if (!isset($_SESSION['active_course_grades'][$i]['incourse'])) {
@@ -903,96 +901,41 @@ function addIncourse($studentRegNum, $gradeTitle, $gradeTotal, $studentScore, $c
   return ($_SESSION['active_course_grades']);
 }
 
-
-
-
-
-
-
-
-function setExamExperimantal($studentRegNum, $gradeTitle, $gradeTotal, $studentScore, $courseId, $courseCredits, $courseSet)
-{
-  $student = [];
-  $incourseArray = [];
-  $studentExists = false;
-  $tableExists = false;
-  // $studentRegNum = array('reg_num' => $studentRegNum);
-  $incourseArrayItem = array("title" => $gradeTitle, "total" => (int) $gradeTotal, "score" => (int) $studentScore);
-
-  for ($i = 0; $i < count($_SESSION['active_course_grades']); $i++) {
-    // checks if student exists in database
-    if ($_SESSION['active_course_grades'][$i]['reg_num'] == $studentRegNum) {
-      $studentExists = true;
-
-
-
-
-      //echo 'inside 1<br>';
-      //checks if any incourse has been stored for this student before, if not create a brand new incourse field and add the new values
-      if (!isset($_SESSION['active_course_grades'][$i]['exam'])) {
-        $_SESSION['active_course_grades'][$i]['exam'] = [];
-        array_push($_SESSION['active_course_grades'][$i]['exam'], $incourseArrayItem);
-      } else {
-        //search through all the incourses added for this student
-        for ($j = 0; $j < count($_SESSION['active_course_grades'][$i]['incourse']); $j++) {
-          //if the particular grade exists before, delete that one and replace it with a new one
-          if (isset($_SESSION['active_course_grades'][$i]['exam'][$j])) {
-            if ($_SESSION['active_course_grades'][$i]['exam'][$j]['title'] == $gradeTitle) {
-              unset($_SESSION['active_course_grades'][$i]['exam'][$j]);
-              array_push($_SESSION['active_course_grades'][$i]['exam'], $incourseArrayItem);
-              return ($_SESSION['active_course_grades']);
-            }
-          }
-        }
-        array_push($_SESSION['active_course_grades'][$i]['exam'], $incourseArrayItem);
-      }
-    } //end of searching for student entry in result
-  }
-  if (!$studentExists) {
-    updateStudentCourseTaken($studentRegNum, $courseId, $courseCredits, $courseSet);
-    //echo 'inside 2<br>';
-    //array_push($student, $studentRegNum);
-    array_push($incourseArray, $incourseArrayItem);
-    // array_push($student, $incourseArray);
-    $student['reg_num'] = $studentRegNum;
-    $student['exam'] = $incourseArray;
-    array_push($_SESSION['active_course_grades'], $student);
-  }
-
-  return ($_SESSION['active_course_grades']);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function setExam($studentRegNum, $gradeTitle, $gradeTotal, $studentScore, $courseId, $courseCredits, $courseSet)
 {
   $student = [];
   $incourseArray = [];
   // $studentRegNum = array('reg_num' => $studentRegNum);
+
+  // store all the just inputted result info into an array
   $incourseArrayItem = array("title" => $gradeTitle, "total" => (int) $gradeTotal, "score" => (int) $studentScore);
 
   $studentExists = false;
   for ($i = 0; $i < count($_SESSION['active_course_grades']); $i++) {
+    // check if the students result already exists, if no create a new entry
     if ($_SESSION['active_course_grades'][$i]['reg_num'] == $studentRegNum) {
+      $studentExists = true;
       //echo 'inside 1<br>';
-      if (isset($_SESSION['active_course_grades'][$i]['exam'])) {
-        array_pop($_SESSION['active_course_grades'][$i]['exam']);
-        array_push($_SESSION['active_course_grades'][$i]['exam'], $incourseArrayItem);
+
+      // check if particular entry/exam has been entered for said student
+      if (isset($_SESSION['active_course_grades'][$i]['exam'][0])) {
+
+        // if entry exists, delete the previous one because an exam score can only be one.
+        unset($_SESSION['active_course_grades'][$i]['exam'][0]);
+        //array_push($_SESSION['active_course_grades'][$i]['exam'], $incourseArrayItem);
+
+        // set the entry to the new result
+        $_SESSION['active_course_grades'][$i]['exam'][0] = $incourseArrayItem;
+      } else {
+        //array_push($incourseArray, $incourseArrayItem);
+
+        // just set the entry
+        $_SESSION['active_course_grades'][$i]['exam'][0] = $incourseArrayItem;
       }
-      return ($_SESSION['active_course_grades']);
     }
   }
+
+  // if student has not been entered before create a new entry/row
   if (!$studentExists) {
     //echo 'inside 2<br>';
     //array_push($student, $studentRegNum);

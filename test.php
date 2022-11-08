@@ -72,7 +72,58 @@ echo '<pre>';
 // unset($_SESSION['active_course_grades'][0]['incourse']);
 // echo('Deleted<br>');
 
-// print_r($_SESSION['active_course_grades']);
+print_r($_SESSION['active_course_grades']);
 
- print_r(json_encode($_SESSION));
+// print_r(json_encode($_SESSION));
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $testResult = '[ {
+//     "reg_num": "2506239642",
+//     "incourse": [
+//         {
+//             "title": "Quiz",
+//             "total": 100,
+//             "score": 100
+//         },
+//         {
+//             "title": "Project",
+//             "total": 100,
+//             "score": 25
+//         }
+//     ],
+//     "exam": [
+//         {
+//             "title": "Exam",
+//             "total": 70,
+//             "score": 25
+//         }
+//     ]
+// }]';
+
+// $testResult = json_decode($testResult, true);
+
+// $gradeTitle = 'Exam';
+// $gradeTotal = 70;
+// $studentScore = 35;
+
+// $incourseArrayItem = array("title" => $gradeTitle, "total" => (int) $gradeTotal, "score" => (int) $studentScore);
+
+// unset($testResult[0]['exam']);
+// //array_push($testResult[0]['exam'], $incourseArrayItem);
+// $testResult[0]['exam'][0] = $incourseArrayItem;
+
+// print_r(json_encode($testResult));
