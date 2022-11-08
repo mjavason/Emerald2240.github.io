@@ -69,50 +69,50 @@ function showSweetAlert($type, $id = null)
 
     case 'course_save_success':
       echo '<script>
-            swal({
-                //title: "New Course",
-                title: "Successful",
-                icon: "success",
-                button: "Got It!",
-            });
-        </script>';
+        swal({
+          //title: "New Course",
+          title: "Successful",
+          icon: "success",
+          button: "Got It!",
+        });
+      </script>';
       break;
 
     case 'client_paid_admin_success':
       echo '<script>swal({
-                        //title: "Edit Course",
-                        title: "Client Payment Confirmed",
-                        icon: "success",
-                        button: "Got It!",
-                      });</script>';
+          //title: "Edit Course",
+          title: "Client Payment Confirmed",
+          icon: "success",
+          button: "Got It!",
+        });</script>';
       break;
 
     case 'course_delete_success':
       echo '<script>swal({
-                        //title: "Delete Course",
-                        title: "Course Deleted Succesfully",
-                        icon: "success",
-                        button: "Got It!",
-                      });</script>';
+          //title: "Delete Course",
+          title: "Course Deleted Succesfully",
+          icon: "success",
+          button: "Got It!",
+        });</script>';
       break;
 
     case 'failure':
       echo '<script>swal({
-                title: "Error",
-                //title: "Payment confirmation failed",
-                icon: "error",
-                button: "Got It!",
-              });</script>';
+          title: "Error",
+          //title: "Payment confirmation failed",
+          icon: "error",
+          button: "Got It!",
+        });</script>';
       break;
 
     case 'failure__argument_not_set':
       echo '<script>swal({
-                    title: "Error!",
-                    text: "Missing compulsory argument",
-                    //title: "",
-                    icon: "error",
-                    button: "Got It!",
-                  });</script>';
+          title: "Error!",
+          text: "Missing compulsory argument",
+          //title: "",
+          icon: "error",
+          button: "Got It!",
+        });</script>';
       break;
 
     case 'warning':
@@ -123,70 +123,70 @@ function showSweetAlert($type, $id = null)
 
     case 'advanced':
       echo '<script>swal({
-                        text: `Search for a movie. e.g. "La La Land".`,
-                        content: "input",
-                        button: {
-                          text: "Search!",
-                          closeModal: false,
-                        },
-                      })
-                      .then(name => {
-                        if (!name) throw null;
-                       
-                        return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
-                      })
-                      .then(results => {
-                        return results.json();
-                      })
-                      .then(json => {
-                        const movie = json.results[0];
-                       
-                        if (!movie) {
-                          return swal("No movie was found!");
-                        }
-                       
-                        const name = movie.trackName;
-                        const imageURL = movie.artworkUrl100;
-                       
-                        swal({
-                          title: "Top result:",
-                          text: name,
-                          icon: imageURL,
-                        });
-                      })
-                      .catch(err => {
-                        if (err) {
-                          swal("Oh noes!", "The AJAX request failed!", "error");
-                        } else {
-                          swal.stopLoading();
-                          swal.close();
-                        }
-                      });</script>';
+          text: `Search for a movie. e.g. "La La Land".`,
+          content: "input",
+          button: {
+            text: "Search!",
+            closeModal: false,
+          },
+        })
+          .then(name => {
+            if (!name) throw null;
+
+            return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
+          })
+          .then(results => {
+            return results.json();
+          })
+          .then(json => {
+            const movie = json.results[0];
+
+            if (!movie) {
+              return swal("No movie was found!");
+            }
+
+            const name = movie.trackName;
+            const imageURL = movie.artworkUrl100;
+
+            swal({
+              title: "Top result:",
+              text: name,
+              icon: imageURL,
+            });
+          })
+          .catch(err => {
+            if (err) {
+              swal("Oh noes!", "The AJAX request failed!", "error");
+            } else {
+              swal.stopLoading();
+              swal.close();
+            }
+          });</script>';
       break;
 
     case 'getTrueOnButtonClicked':
       echo '<script>swal("Click on either the button or outside the modal.")
-            .then((value) => {
-              swal(`The returned value is: ${value}`);
-            });</script>';
+          .then((value) => {
+            swal(`The returned value is: ${value}`);
+          });</script>';
 
     case 'warnBeforePerformingAction':
       echo '<script>swal({
-              title: "Are you sure?",
-              text: "Once deleted, you will not be able to recover this imaginary file!",
-              icon: "warning",
-              buttons: true,
-              dangerMode: true,
-            })
-            .then((willDelete) => {
-              if (willDelete) {
-                swal("Poof! Your imaginary file has been deleted!", {
-                  icon: "success",
-                });
-              } else {
-                swal("Your imaginary file is safe!");
-              }
-            });</script>';
+          title: "Are you sure?",
+          text: "Once deleted, you will not be able to recover this imaginary file!",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("Poof! Your imaginary file has been deleted!", {
+                icon: "success",
+              });
+            } else {
+              swal("Your imaginary file is safe!");
+            }
+          });</script>';
 
 
 
@@ -255,7 +255,7 @@ function confirmUserEmailAndPassword($postemail, $postpassword, $rememberMe)
         if (isset($_COOKIE['mem_log'])) {
           setcookie('mem_log', '');
         }
-        setcookie("client_mail",  $_SESSION['user_email'], time() + (10 * 365 * 24 * 60 * 60));
+        setcookie("client_mail", $_SESSION['user_email'], time() + (10 * 365 * 24 * 60 * 60));
         setcookie("client_pass", '', time() + (10 * 365 * 24 * 60 * 60));
       }
     }
@@ -419,27 +419,21 @@ function returnGrade($score)
   switch ($score) {
     case ($score < 40):
       return 'F';
-      break;
 
     case ($score >= 40 && $score < 50):
       return 'D';
-      break;
 
     case ($score >= 50 && $score < 60):
       return 'C';
-      break;
 
     case ($score >= 60 && $score < 70):
       return 'B';
-      break;
 
     case ($score >= 70):
       return 'A';
-      break;
 
     default:
       return 'X';
-      break;
   }
 }
 
@@ -491,8 +485,8 @@ function getDepartmentInfo($id)
     createLog('Success', 'getDepartmentInfo');
     return $result[0];
   } else {
-    return false;
     createLog('Failed', 'getDepartmentInfo');
+    return false;
   }
 }
 
@@ -696,7 +690,7 @@ function loadSessions()
   $limit = 6;
   $year = date('Y') - 6;
   for ($i = 0; $i < 6; $i++) {
-    echo '<option value="' . ($year + $i) . '/' . ($year + $i + 1) . '">' . ($year + $i) . '/' . ($year + $i + 1) . ' (' . ($limit)  . '00 Level)</option>';
+    echo '<option value="' . ($year + $i) . '/' . ($year + $i + 1) . '">' . ($year + $i) . '/' . ($year + $i + 1) . ' (' . ($limit) . '00 Level)</option>';
 
     // <option value="2017/2018">2017/2018</option>
     // <option value="2018/2019">2018/2019</option>
@@ -748,7 +742,7 @@ function activateCourse($courseId, $tableId, $level, $setYear, $credits)
   createLog('Success', 'activateCourse');
 }
 
-function deactivateCourse()
+function deactivateCourse($courseId)
 {
   if (isset($courseId)) {
     unset($_SESSION['active_course_id']);
@@ -767,7 +761,6 @@ function deactivateCourse()
 
 function getResults($resultId)
 {
-
   global $db_handle;
 
   $result = $db_handle->selectAllWhere('results', 'id', $resultId);
@@ -865,7 +858,7 @@ function addIncourse($studentRegNum, $gradeTitle, $gradeTotal, $studentScore, $c
   $studentExists = false;
   $tableExists = false;
   // $studentRegNum = array('reg_num' => $studentRegNum);
-  $incourseArrayItem = array("title" => $gradeTitle, "total" => (int)$gradeTotal, "score" => (int)$studentScore);
+  $incourseArrayItem = array("title" => $gradeTitle, "total" => (int) $gradeTotal, "score" => (int) $studentScore);
 
   for ($i = 0; $i < count($_SESSION['active_course_grades']); $i++) {
     // checks if student exists in database
@@ -910,12 +903,84 @@ function addIncourse($studentRegNum, $gradeTitle, $gradeTotal, $studentScore, $c
   return ($_SESSION['active_course_grades']);
 }
 
+
+
+
+
+
+
+
+function setExamExperimantal($studentRegNum, $gradeTitle, $gradeTotal, $studentScore, $courseId, $courseCredits, $courseSet)
+{
+  $student = [];
+  $incourseArray = [];
+  $studentExists = false;
+  $tableExists = false;
+  // $studentRegNum = array('reg_num' => $studentRegNum);
+  $incourseArrayItem = array("title" => $gradeTitle, "total" => (int) $gradeTotal, "score" => (int) $studentScore);
+
+  for ($i = 0; $i < count($_SESSION['active_course_grades']); $i++) {
+    // checks if student exists in database
+    if ($_SESSION['active_course_grades'][$i]['reg_num'] == $studentRegNum) {
+      $studentExists = true;
+
+
+
+
+      //echo 'inside 1<br>';
+      //checks if any incourse has been stored for this student before, if not create a brand new incourse field and add the new values
+      if (!isset($_SESSION['active_course_grades'][$i]['exam'])) {
+        $_SESSION['active_course_grades'][$i]['exam'] = [];
+        array_push($_SESSION['active_course_grades'][$i]['exam'], $incourseArrayItem);
+      } else {
+        //search through all the incourses added for this student
+        for ($j = 0; $j < count($_SESSION['active_course_grades'][$i]['incourse']); $j++) {
+          //if the particular grade exists before, delete that one and replace it with a new one
+          if (isset($_SESSION['active_course_grades'][$i]['exam'][$j])) {
+            if ($_SESSION['active_course_grades'][$i]['exam'][$j]['title'] == $gradeTitle) {
+              unset($_SESSION['active_course_grades'][$i]['exam'][$j]);
+              array_push($_SESSION['active_course_grades'][$i]['exam'], $incourseArrayItem);
+              return ($_SESSION['active_course_grades']);
+            }
+          }
+        }
+        array_push($_SESSION['active_course_grades'][$i]['exam'], $incourseArrayItem);
+      }
+    } //end of searching for student entry in result
+  }
+  if (!$studentExists) {
+    updateStudentCourseTaken($studentRegNum, $courseId, $courseCredits, $courseSet);
+    //echo 'inside 2<br>';
+    //array_push($student, $studentRegNum);
+    array_push($incourseArray, $incourseArrayItem);
+    // array_push($student, $incourseArray);
+    $student['reg_num'] = $studentRegNum;
+    $student['exam'] = $incourseArray;
+    array_push($_SESSION['active_course_grades'], $student);
+  }
+
+  return ($_SESSION['active_course_grades']);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function setExam($studentRegNum, $gradeTitle, $gradeTotal, $studentScore, $courseId, $courseCredits, $courseSet)
 {
   $student = [];
   $incourseArray = [];
   // $studentRegNum = array('reg_num' => $studentRegNum);
-  $incourseArrayItem = array("title" => $gradeTitle, "total" => (int)$gradeTotal, "score" => (int)$studentScore);
+  $incourseArrayItem = array("title" => $gradeTitle, "total" => (int) $gradeTotal, "score" => (int) $studentScore);
 
   $studentExists = false;
   for ($i = 0; $i < count($_SESSION['active_course_grades']); $i++) {

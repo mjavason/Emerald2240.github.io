@@ -36,10 +36,10 @@ class DBController
 
 		$options = [
 			// turn off emulation mode for "real" prepared statements
-			PDO::ATTR_EMULATE_PREPARES   => false,
+			PDO::ATTR_EMULATE_PREPARES => false,
 
 			//turn on errors in the form of exceptions
-			PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 
 			//make the default fetch be an associative array
 			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -76,13 +76,13 @@ class DBController
 			return true;
 		} else {
 			die(mysqli_error($this->conn)); //something a user can understand
-			return false;
+			//return false;
 		}
 	}
 
 	function numRows($query)
 	{
-		$result  = mysqli_query($this->conn, $query);
+		$result = mysqli_query($this->conn, $query);
 		$rowcount = mysqli_num_rows($result);
 		return $rowcount;
 	}
@@ -205,4 +205,4 @@ class DBController
 		$result = $this->runQueryWithoutResponse($query);
 		return $result;
 	}
-}//end of class
+} //end of class

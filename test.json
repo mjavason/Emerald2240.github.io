@@ -1,0 +1,19 @@
+[
+    {
+        "reg_num": "2017030180311",
+        "incourse": [
+            {
+                "title": "Quiz",
+                "total": 100,
+                "score": 100
+            }
+        ],
+        "exam": [
+            {
+                "title": "Exam",
+                "total": 70,
+                "score": 70
+            }
+        ]
+    }
+]
